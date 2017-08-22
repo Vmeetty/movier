@@ -1,0 +1,537 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F50943031F4C4DBC00E42A7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50943021F4C4DBC00E42A7C /* AppDelegate.swift */; };
+		F50943051F4C4DBC00E42A7C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50943041F4C4DBC00E42A7C /* FirstViewController.swift */; };
+		F50943071F4C4DBC00E42A7C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50943061F4C4DBC00E42A7C /* SecondViewController.swift */; };
+		F509430A1F4C4DBC00E42A7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F50943081F4C4DBC00E42A7C /* Main.storyboard */; };
+		F509430C1F4C4DBC00E42A7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F509430B1F4C4DBC00E42A7C /* Assets.xcassets */; };
+		F509430F1F4C4DBC00E42A7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F509430D1F4C4DBC00E42A7C /* LaunchScreen.storyboard */; };
+		F509431A1F4C4DBC00E42A7C /* LabraFilmsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50943191F4C4DBC00E42A7C /* LabraFilmsTests.swift */; };
+		F50943251F4C4DBC00E42A7C /* LabraFilmsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50943241F4C4DBC00E42A7C /* LabraFilmsUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F50943161F4C4DBC00E42A7C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F50942F71F4C4DBC00E42A7C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F50942FE1F4C4DBC00E42A7C;
+			remoteInfo = LabraFilms;
+		};
+		F50943211F4C4DBC00E42A7C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F50942F71F4C4DBC00E42A7C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F50942FE1F4C4DBC00E42A7C;
+			remoteInfo = LabraFilms;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F50942FF1F4C4DBC00E42A7C /* LabraFilms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LabraFilms.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F50943021F4C4DBC00E42A7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F50943041F4C4DBC00E42A7C /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		F50943061F4C4DBC00E42A7C /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		F50943091F4C4DBC00E42A7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F509430B1F4C4DBC00E42A7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F509430E1F4C4DBC00E42A7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F50943101F4C4DBC00E42A7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F50943151F4C4DBC00E42A7C /* LabraFilmsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LabraFilmsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F50943191F4C4DBC00E42A7C /* LabraFilmsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabraFilmsTests.swift; sourceTree = "<group>"; };
+		F509431B1F4C4DBC00E42A7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F50943201F4C4DBC00E42A7C /* LabraFilmsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LabraFilmsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F50943241F4C4DBC00E42A7C /* LabraFilmsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabraFilmsUITests.swift; sourceTree = "<group>"; };
+		F50943261F4C4DBC00E42A7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F50942FC1F4C4DBC00E42A7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F50943121F4C4DBC00E42A7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F509431D1F4C4DBC00E42A7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F50942F61F4C4DBC00E42A7C = {
+			isa = PBXGroup;
+			children = (
+				F50943011F4C4DBC00E42A7C /* LabraFilms */,
+				F50943181F4C4DBC00E42A7C /* LabraFilmsTests */,
+				F50943231F4C4DBC00E42A7C /* LabraFilmsUITests */,
+				F50943001F4C4DBC00E42A7C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F50943001F4C4DBC00E42A7C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F50942FF1F4C4DBC00E42A7C /* LabraFilms.app */,
+				F50943151F4C4DBC00E42A7C /* LabraFilmsTests.xctest */,
+				F50943201F4C4DBC00E42A7C /* LabraFilmsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F50943011F4C4DBC00E42A7C /* LabraFilms */ = {
+			isa = PBXGroup;
+			children = (
+				F50943021F4C4DBC00E42A7C /* AppDelegate.swift */,
+				F50943041F4C4DBC00E42A7C /* FirstViewController.swift */,
+				F50943061F4C4DBC00E42A7C /* SecondViewController.swift */,
+				F50943081F4C4DBC00E42A7C /* Main.storyboard */,
+				F509430B1F4C4DBC00E42A7C /* Assets.xcassets */,
+				F509430D1F4C4DBC00E42A7C /* LaunchScreen.storyboard */,
+				F50943101F4C4DBC00E42A7C /* Info.plist */,
+			);
+			path = LabraFilms;
+			sourceTree = "<group>";
+		};
+		F50943181F4C4DBC00E42A7C /* LabraFilmsTests */ = {
+			isa = PBXGroup;
+			children = (
+				F50943191F4C4DBC00E42A7C /* LabraFilmsTests.swift */,
+				F509431B1F4C4DBC00E42A7C /* Info.plist */,
+			);
+			path = LabraFilmsTests;
+			sourceTree = "<group>";
+		};
+		F50943231F4C4DBC00E42A7C /* LabraFilmsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F50943241F4C4DBC00E42A7C /* LabraFilmsUITests.swift */,
+				F50943261F4C4DBC00E42A7C /* Info.plist */,
+			);
+			path = LabraFilmsUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F50942FE1F4C4DBC00E42A7C /* LabraFilms */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F50943291F4C4DBC00E42A7C /* Build configuration list for PBXNativeTarget "LabraFilms" */;
+			buildPhases = (
+				F50942FB1F4C4DBC00E42A7C /* Sources */,
+				F50942FC1F4C4DBC00E42A7C /* Frameworks */,
+				F50942FD1F4C4DBC00E42A7C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LabraFilms;
+			productName = LabraFilms;
+			productReference = F50942FF1F4C4DBC00E42A7C /* LabraFilms.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F50943141F4C4DBC00E42A7C /* LabraFilmsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F509432C1F4C4DBC00E42A7C /* Build configuration list for PBXNativeTarget "LabraFilmsTests" */;
+			buildPhases = (
+				F50943111F4C4DBC00E42A7C /* Sources */,
+				F50943121F4C4DBC00E42A7C /* Frameworks */,
+				F50943131F4C4DBC00E42A7C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F50943171F4C4DBC00E42A7C /* PBXTargetDependency */,
+			);
+			name = LabraFilmsTests;
+			productName = LabraFilmsTests;
+			productReference = F50943151F4C4DBC00E42A7C /* LabraFilmsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F509431F1F4C4DBC00E42A7C /* LabraFilmsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F509432F1F4C4DBC00E42A7C /* Build configuration list for PBXNativeTarget "LabraFilmsUITests" */;
+			buildPhases = (
+				F509431C1F4C4DBC00E42A7C /* Sources */,
+				F509431D1F4C4DBC00E42A7C /* Frameworks */,
+				F509431E1F4C4DBC00E42A7C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F50943221F4C4DBC00E42A7C /* PBXTargetDependency */,
+			);
+			name = LabraFilmsUITests;
+			productName = LabraFilmsUITests;
+			productReference = F50943201F4C4DBC00E42A7C /* LabraFilmsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F50942F71F4C4DBC00E42A7C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = vlad;
+				TargetAttributes = {
+					F50942FE1F4C4DBC00E42A7C = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = NYBC469U45;
+						ProvisioningStyle = Automatic;
+					};
+					F50943141F4C4DBC00E42A7C = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F50942FE1F4C4DBC00E42A7C;
+					};
+					F509431F1F4C4DBC00E42A7C = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F50942FE1F4C4DBC00E42A7C;
+					};
+				};
+			};
+			buildConfigurationList = F50942FA1F4C4DBC00E42A7C /* Build configuration list for PBXProject "LabraFilms" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F50942F61F4C4DBC00E42A7C;
+			productRefGroup = F50943001F4C4DBC00E42A7C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F50942FE1F4C4DBC00E42A7C /* LabraFilms */,
+				F50943141F4C4DBC00E42A7C /* LabraFilmsTests */,
+				F509431F1F4C4DBC00E42A7C /* LabraFilmsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F50942FD1F4C4DBC00E42A7C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F509430F1F4C4DBC00E42A7C /* LaunchScreen.storyboard in Resources */,
+				F509430C1F4C4DBC00E42A7C /* Assets.xcassets in Resources */,
+				F509430A1F4C4DBC00E42A7C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F50943131F4C4DBC00E42A7C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F509431E1F4C4DBC00E42A7C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F50942FB1F4C4DBC00E42A7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F50943071F4C4DBC00E42A7C /* SecondViewController.swift in Sources */,
+				F50943031F4C4DBC00E42A7C /* AppDelegate.swift in Sources */,
+				F50943051F4C4DBC00E42A7C /* FirstViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F50943111F4C4DBC00E42A7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F509431A1F4C4DBC00E42A7C /* LabraFilmsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F509431C1F4C4DBC00E42A7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F50943251F4C4DBC00E42A7C /* LabraFilmsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F50943171F4C4DBC00E42A7C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F50942FE1F4C4DBC00E42A7C /* LabraFilms */;
+			targetProxy = F50943161F4C4DBC00E42A7C /* PBXContainerItemProxy */;
+		};
+		F50943221F4C4DBC00E42A7C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F50942FE1F4C4DBC00E42A7C /* LabraFilms */;
+			targetProxy = F50943211F4C4DBC00E42A7C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F50943081F4C4DBC00E42A7C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F50943091F4C4DBC00E42A7C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F509430D1F4C4DBC00E42A7C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F509430E1F4C4DBC00E42A7C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F50943271F4C4DBC00E42A7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F50943281F4C4DBC00E42A7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F509432A1F4C4DBC00E42A7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NYBC469U45;
+				INFOPLIST_FILE = LabraFilms/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = vladchuvashov.LabraFilms;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F509432B1F4C4DBC00E42A7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NYBC469U45;
+				INFOPLIST_FILE = LabraFilms/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = vladchuvashov.LabraFilms;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		F509432D1F4C4DBC00E42A7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LabraFilmsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = vladchuvashov.LabraFilmsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LabraFilms.app/LabraFilms";
+			};
+			name = Debug;
+		};
+		F509432E1F4C4DBC00E42A7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LabraFilmsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = vladchuvashov.LabraFilmsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LabraFilms.app/LabraFilms";
+			};
+			name = Release;
+		};
+		F50943301F4C4DBC00E42A7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = LabraFilmsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = vladchuvashov.LabraFilmsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = LabraFilms;
+			};
+			name = Debug;
+		};
+		F50943311F4C4DBC00E42A7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = LabraFilmsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = vladchuvashov.LabraFilmsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = LabraFilms;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F50942FA1F4C4DBC00E42A7C /* Build configuration list for PBXProject "LabraFilms" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F50943271F4C4DBC00E42A7C /* Debug */,
+				F50943281F4C4DBC00E42A7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F50943291F4C4DBC00E42A7C /* Build configuration list for PBXNativeTarget "LabraFilms" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F509432A1F4C4DBC00E42A7C /* Debug */,
+				F509432B1F4C4DBC00E42A7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F509432C1F4C4DBC00E42A7C /* Build configuration list for PBXNativeTarget "LabraFilmsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F509432D1F4C4DBC00E42A7C /* Debug */,
+				F509432E1F4C4DBC00E42A7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F509432F1F4C4DBC00E42A7C /* Build configuration list for PBXNativeTarget "LabraFilmsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F50943301F4C4DBC00E42A7C /* Debug */,
+				F50943311F4C4DBC00E42A7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F50942F71F4C4DBC00E42A7C /* Project object */;
+}
