@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  SecondViewController.swift
 //  LabraFilms
 //
 //  Created by vlad on 8/22/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class SeriesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -7,14 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A262F2AA0A4B37BA8148E260 /* Pods_LabraFilmsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9DB691420071C703E2CCA38 /* Pods_LabraFilmsUITests.framework */; };
+		C6586D7238F6D854B807193F /* Pods_LabraFilms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA1B0AD875E4CB8674A3841D /* Pods_LabraFilms.framework */; };
+		F4F8C97F6270A0293BB74BA1 /* Pods_LabraFilmsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79BA5BBADE12DAC09E0E9583 /* Pods_LabraFilmsTests.framework */; };
 		F50943031F4C4DBC00E42A7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50943021F4C4DBC00E42A7C /* AppDelegate.swift */; };
-		F50943051F4C4DBC00E42A7C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50943041F4C4DBC00E42A7C /* FirstViewController.swift */; };
-		F50943071F4C4DBC00E42A7C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50943061F4C4DBC00E42A7C /* SecondViewController.swift */; };
+		F50943051F4C4DBC00E42A7C /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50943041F4C4DBC00E42A7C /* MovieViewController.swift */; };
+		F50943071F4C4DBC00E42A7C /* SeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50943061F4C4DBC00E42A7C /* SeriesViewController.swift */; };
 		F509430A1F4C4DBC00E42A7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F50943081F4C4DBC00E42A7C /* Main.storyboard */; };
 		F509430C1F4C4DBC00E42A7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F509430B1F4C4DBC00E42A7C /* Assets.xcassets */; };
 		F509430F1F4C4DBC00E42A7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F509430D1F4C4DBC00E42A7C /* LaunchScreen.storyboard */; };
 		F509431A1F4C4DBC00E42A7C /* LabraFilmsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50943191F4C4DBC00E42A7C /* LabraFilmsTests.swift */; };
 		F50943251F4C4DBC00E42A7C /* LabraFilmsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50943241F4C4DBC00E42A7C /* LabraFilmsUITests.swift */; };
+		F50943361F4C532F00E42A7C /* FilmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50943351F4C532F00E42A7C /* FilmTableViewCell.swift */; };
+		F50943381F4C545D00E42A7C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50943371F4C545D00E42A7C /* Constants.swift */; };
+		F509433A1F4C558900E42A7C /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50943391F4C558900E42A7C /* Film.swift */; };
+		F509433D1F4C58BB00E42A7C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F509433C1F4C58BB00E42A7C /* NetworkManager.swift */; };
+		F5F5E87C1F4D805F0020B33C /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F5E87B1F4D805F0020B33C /* MovieDetailViewController.swift */; };
+		F5F5E87E1F4D8A620020B33C /* FilmDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F5E87D1F4D8A620020B33C /* FilmDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +44,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08A3AA55FEB409C67EFE527B /* Pods-LabraFilms.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LabraFilms.release.xcconfig"; path = "Pods/Target Support Files/Pods-LabraFilms/Pods-LabraFilms.release.xcconfig"; sourceTree = "<group>"; };
+		5741A369372923BB09AA2525 /* Pods-LabraFilmsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LabraFilmsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LabraFilmsTests/Pods-LabraFilmsTests.release.xcconfig"; sourceTree = "<group>"; };
+		66453A4D189621FFAB1DE23C /* Pods-LabraFilmsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LabraFilmsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LabraFilmsUITests/Pods-LabraFilmsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		72A2621BDFA64149165964B6 /* Pods-LabraFilmsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LabraFilmsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LabraFilmsTests/Pods-LabraFilmsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		79BA5BBADE12DAC09E0E9583 /* Pods_LabraFilmsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LabraFilmsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A1B40AA58D65325A0AB02F4 /* Pods-LabraFilmsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LabraFilmsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LabraFilmsUITests/Pods-LabraFilmsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9BC91FC451626805CF1077A0 /* Pods-LabraFilms.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LabraFilms.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LabraFilms/Pods-LabraFilms.debug.xcconfig"; sourceTree = "<group>"; };
+		A9DB691420071C703E2CCA38 /* Pods_LabraFilmsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LabraFilmsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA1B0AD875E4CB8674A3841D /* Pods_LabraFilms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LabraFilms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F50942FF1F4C4DBC00E42A7C /* LabraFilms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LabraFilms.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F50943021F4C4DBC00E42A7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F50943041F4C4DBC00E42A7C /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		F50943061F4C4DBC00E42A7C /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		F50943041F4C4DBC00E42A7C /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
+		F50943061F4C4DBC00E42A7C /* SeriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesViewController.swift; sourceTree = "<group>"; };
 		F50943091F4C4DBC00E42A7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F509430B1F4C4DBC00E42A7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F509430E1F4C4DBC00E42A7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +67,12 @@
 		F50943201F4C4DBC00E42A7C /* LabraFilmsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LabraFilmsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F50943241F4C4DBC00E42A7C /* LabraFilmsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabraFilmsUITests.swift; sourceTree = "<group>"; };
 		F50943261F4C4DBC00E42A7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F50943351F4C532F00E42A7C /* FilmTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilmTableViewCell.swift; sourceTree = "<group>"; };
+		F50943371F4C545D00E42A7C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F50943391F4C558900E42A7C /* Film.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
+		F509433C1F4C58BB00E42A7C /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		F5F5E87B1F4D805F0020B33C /* MovieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		F5F5E87D1F4D8A620020B33C /* FilmDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilmDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6586D7238F6D854B807193F /* Pods_LabraFilms.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4F8C97F6270A0293BB74BA1 /* Pods_LabraFilmsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +96,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A262F2AA0A4B37BA8148E260 /* Pods_LabraFilmsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		72E1FF87E39083ACF4D0A222 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA1B0AD875E4CB8674A3841D /* Pods_LabraFilms.framework */,
+				79BA5BBADE12DAC09E0E9583 /* Pods_LabraFilmsTests.framework */,
+				A9DB691420071C703E2CCA38 /* Pods_LabraFilmsUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A2265B4E5D9448B56762BA25 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9BC91FC451626805CF1077A0 /* Pods-LabraFilms.debug.xcconfig */,
+				08A3AA55FEB409C67EFE527B /* Pods-LabraFilms.release.xcconfig */,
+				72A2621BDFA64149165964B6 /* Pods-LabraFilmsTests.debug.xcconfig */,
+				5741A369372923BB09AA2525 /* Pods-LabraFilmsTests.release.xcconfig */,
+				66453A4D189621FFAB1DE23C /* Pods-LabraFilmsUITests.debug.xcconfig */,
+				7A1B40AA58D65325A0AB02F4 /* Pods-LabraFilmsUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F50942F61F4C4DBC00E42A7C = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +133,8 @@
 				F50943181F4C4DBC00E42A7C /* LabraFilmsTests */,
 				F50943231F4C4DBC00E42A7C /* LabraFilmsUITests */,
 				F50943001F4C4DBC00E42A7C /* Products */,
+				A2265B4E5D9448B56762BA25 /* Pods */,
+				72E1FF87E39083ACF4D0A222 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,10 +151,13 @@
 		F50943011F4C4DBC00E42A7C /* LabraFilms */ = {
 			isa = PBXGroup;
 			children = (
-				F50943021F4C4DBC00E42A7C /* AppDelegate.swift */,
-				F50943041F4C4DBC00E42A7C /* FirstViewController.swift */,
-				F50943061F4C4DBC00E42A7C /* SecondViewController.swift */,
 				F50943081F4C4DBC00E42A7C /* Main.storyboard */,
+				F50943021F4C4DBC00E42A7C /* AppDelegate.swift */,
+				F50943371F4C545D00E42A7C /* Constants.swift */,
+				F509433B1F4C58A300E42A7C /* Managers */,
+				F50943321F4C52CC00E42A7C /* Controller */,
+				F50943331F4C52DE00E42A7C /* View */,
+				F50943341F4C52F900E42A7C /* Model */,
 				F509430B1F4C4DBC00E42A7C /* Assets.xcassets */,
 				F509430D1F4C4DBC00E42A7C /* LaunchScreen.storyboard */,
 				F50943101F4C4DBC00E42A7C /* Info.plist */,
@@ -128,6 +183,41 @@
 			path = LabraFilmsUITests;
 			sourceTree = "<group>";
 		};
+		F50943321F4C52CC00E42A7C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F50943041F4C4DBC00E42A7C /* MovieViewController.swift */,
+				F5F5E87B1F4D805F0020B33C /* MovieDetailViewController.swift */,
+				F50943061F4C4DBC00E42A7C /* SeriesViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		F50943331F4C52DE00E42A7C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F50943351F4C532F00E42A7C /* FilmTableViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		F50943341F4C52F900E42A7C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F50943391F4C558900E42A7C /* Film.swift */,
+				F5F5E87D1F4D8A620020B33C /* FilmDetail.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F509433B1F4C58A300E42A7C /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				F509433C1F4C58BB00E42A7C /* NetworkManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +225,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F50943291F4C4DBC00E42A7C /* Build configuration list for PBXNativeTarget "LabraFilms" */;
 			buildPhases = (
+				8DDADFB82B3D801E0B787CC7 /* [CP] Check Pods Manifest.lock */,
 				F50942FB1F4C4DBC00E42A7C /* Sources */,
 				F50942FC1F4C4DBC00E42A7C /* Frameworks */,
 				F50942FD1F4C4DBC00E42A7C /* Resources */,
+				15D983A38E1B68B22621D1A1 /* [CP] Embed Pods Frameworks */,
+				EC7734F1C54E2504F2BCB15D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,9 +245,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F509432C1F4C4DBC00E42A7C /* Build configuration list for PBXNativeTarget "LabraFilmsTests" */;
 			buildPhases = (
+				4EDAE4FBDB48DD4F6322226E /* [CP] Check Pods Manifest.lock */,
 				F50943111F4C4DBC00E42A7C /* Sources */,
 				F50943121F4C4DBC00E42A7C /* Frameworks */,
 				F50943131F4C4DBC00E42A7C /* Resources */,
+				B378F06BD7C51322C1F352E7 /* [CP] Embed Pods Frameworks */,
+				6FB2B401BAF283FF9E48954A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +266,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F509432F1F4C4DBC00E42A7C /* Build configuration list for PBXNativeTarget "LabraFilmsUITests" */;
 			buildPhases = (
+				68A3038E92F903D12C2A83A7 /* [CP] Check Pods Manifest.lock */,
 				F509431C1F4C4DBC00E42A7C /* Sources */,
 				F509431D1F4C4DBC00E42A7C /* Frameworks */,
 				F509431E1F4C4DBC00E42A7C /* Resources */,
+				984D993777F17C059289D703 /* [CP] Embed Pods Frameworks */,
+				7CB5C076A88FED93F0393DD5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -258,14 +357,172 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		15D983A38E1B68B22621D1A1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LabraFilms/Pods-LabraFilms-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LabraFilms/Pods-LabraFilms-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4EDAE4FBDB48DD4F6322226E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LabraFilmsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68A3038E92F903D12C2A83A7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LabraFilmsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6FB2B401BAF283FF9E48954A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LabraFilmsTests/Pods-LabraFilmsTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7CB5C076A88FED93F0393DD5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LabraFilmsUITests/Pods-LabraFilmsUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8DDADFB82B3D801E0B787CC7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LabraFilms-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		984D993777F17C059289D703 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LabraFilmsUITests/Pods-LabraFilmsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B378F06BD7C51322C1F352E7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LabraFilmsTests/Pods-LabraFilmsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC7734F1C54E2504F2BCB15D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LabraFilms/Pods-LabraFilms-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F50942FB1F4C4DBC00E42A7C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F50943071F4C4DBC00E42A7C /* SecondViewController.swift in Sources */,
+				F50943381F4C545D00E42A7C /* Constants.swift in Sources */,
+				F509433A1F4C558900E42A7C /* Film.swift in Sources */,
+				F50943071F4C4DBC00E42A7C /* SeriesViewController.swift in Sources */,
+				F509433D1F4C58BB00E42A7C /* NetworkManager.swift in Sources */,
+				F5F5E87C1F4D805F0020B33C /* MovieDetailViewController.swift in Sources */,
+				F50943361F4C532F00E42A7C /* FilmTableViewCell.swift in Sources */,
 				F50943031F4C4DBC00E42A7C /* AppDelegate.swift in Sources */,
-				F50943051F4C4DBC00E42A7C /* FirstViewController.swift in Sources */,
+				F50943051F4C4DBC00E42A7C /* MovieViewController.swift in Sources */,
+				F5F5E87E1F4D8A620020B33C /* FilmDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +674,7 @@
 		};
 		F509432A1F4C4DBC00E42A7C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BC91FC451626805CF1077A0 /* Pods-LabraFilms.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = NYBC469U45;
@@ -430,6 +688,7 @@
 		};
 		F509432B1F4C4DBC00E42A7C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08A3AA55FEB409C67EFE527B /* Pods-LabraFilms.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = NYBC469U45;
@@ -443,6 +702,7 @@
 		};
 		F509432D1F4C4DBC00E42A7C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72A2621BDFA64149165964B6 /* Pods-LabraFilmsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -457,6 +717,7 @@
 		};
 		F509432E1F4C4DBC00E42A7C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5741A369372923BB09AA2525 /* Pods-LabraFilmsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -471,6 +732,7 @@
 		};
 		F50943301F4C4DBC00E42A7C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66453A4D189621FFAB1DE23C /* Pods-LabraFilmsUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = LabraFilmsUITests/Info.plist;
@@ -484,6 +746,7 @@
 		};
 		F50943311F4C4DBC00E42A7C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A1B40AA58D65325A0AB02F4 /* Pods-LabraFilmsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = LabraFilmsUITests/Info.plist;
@@ -514,6 +777,7 @@
 				F509432B1F4C4DBC00E42A7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F509432C1F4C4DBC00E42A7C /* Build configuration list for PBXNativeTarget "LabraFilmsTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +786,7 @@
 				F509432E1F4C4DBC00E42A7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F509432F1F4C4DBC00E42A7C /* Build configuration list for PBXNativeTarget "LabraFilmsUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +795,7 @@
 				F50943311F4C4DBC00E42A7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
