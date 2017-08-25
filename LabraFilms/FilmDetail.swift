@@ -28,9 +28,4 @@ class FilmDetail {
         self.releaseDate = releaseDate
     }
     
-//    static func parseJSON (json: JSON) -> FilmDetail {
-//        let result = FilmDetail(json: json)
-//        return result!
-//    }
-    
 }

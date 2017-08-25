@@ -35,6 +35,7 @@ enum Networking: String {
     case baseURL = "https://api.themoviedb.org/3/movie/"
     case movie = "3/movie/"
     case topRated = "top_rated"
+    case latest = "latest"
     case baseURLposter = "https://image.tmdb.org/t/p/"
     case posterSize = "w370"
 }

@@ -9,25 +9,48 @@
 import UIKit
 
 class MovieViewController: UIViewController {
- 
+    
     @IBOutlet weak var myTableView: UITableView!
     var films:[Film] = []
     var movieID = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadMovies()
+        
+        // start animating spinner*******
+        
+        
+        NetworkManager.sharedInstance.getLatestMovieID { (id) in
+            self.loadMovies(latestMovieID: id)
+        }
     }
     
-    func loadMovies () {
-        NetworkManager.sharedInstance.getVideoInfo(succes: { (films) in
+    override func viewWillAppear(_ animated: Bool) {
+        
+//        loadTopRatedMovies()
+    }
+    
+    func loadMovies (latestMovieID: Int) {
+        for id in 1...20 {
+            NetworkManager.sharedInstance.getMovie (by: id, succes: { (film) in
+                self.films.append(film)
+                self.myTableView.reloadData()
+            }) { (errorStr) in
+                print(errorStr)
+            }
+        }
+        
+    }
+    
+    func loadTopRatedMovies () {
+        NetworkManager.sharedInstance.getTopRated (succes: { (films) in
             self.films = films
             self.myTableView.reloadData()
         }) { (errorStr) in
             print(errorStr)
         }
     }
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == SegueIDs.movieDetailSegueID.rawValue {
             if let detailVC = segue.destination as? MovieDetailViewController {
@@ -44,7 +67,12 @@ extension MovieViewController: UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: filmCellID, for: indexPath) as! FilmTableViewCell
-        cell.film = films[indexPath.row]
+        if let posterPath = self.films[indexPath.row].posterPath {
+            let urlStr = Networking.baseURLposter.rawValue + Networking.posterSize.rawValue + posterPath
+            cell.imageURL = URL(string: urlStr)
+            cell.film = films[indexPath.row]
+        }
+        
         return cell
     }
 }
@@ -52,7 +80,7 @@ extension MovieViewController: UITableViewDataSource {
 extension MovieViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.dequeueReusableCell(withIdentifier: filmCellID, for: indexPath) as! FilmTableViewCell
+        let cell = tableView.cellForRow(at: indexPath)
         movieID = films[indexPath.row].id
         performSegue(withIdentifier: SegueIDs.movieDetailSegueID.rawValue, sender: cell)
     }

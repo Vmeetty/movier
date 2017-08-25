@@ -14,12 +14,47 @@ class NetworkManager {
     
     static let sharedInstance = NetworkManager()
     private init(){}
-
-    private let params: [String:Any] = ["api_key":"6612c1c2ce2d96fa707ae10e6b3bba43"]
-    private let baseURL = Networking.baseURL.rawValue + Networking.topRated.rawValue
     
-    func getVideoInfo(succes: @escaping ([Film])->(), fail: @escaping (String)->()) {
-        Alamofire.request(baseURL, method: .get, parameters: params).responseJSON { (response) in
+    //************
+    // ***** fix that stuff. It's have to be put into enum or it's shoud be some list of params
+    //    private let params: [String:Any] = ["api_key":"6612c1c2ce2d96fa707ae10e6b3bba43", "page":31]
+    private let params: [String:Any] = ["api_key":"6612c1c2ce2d96fa707ae10e6b3bba43"]
+    //************
+    
+    
+    
+    func getLatestMovieID (complition: @escaping (Int)->()) {
+        Alamofire.request(Networking.baseURL.rawValue + Networking.latest.rawValue, method: .get, parameters: params).responseJSON { (response) in
+            if let error = response.error {
+                print(error.localizedDescription)
+            } else {
+                if let value = response.value {
+                    let json = JSON(value)
+                    if let id = json["id"].int {
+                        complition(id)
+                    }
+                }
+            }
+        }
+    }
+    
+    // get movie
+    func getMovie(by externalID: Int, succes: @escaping (Film)->(), fail: @escaping (String)->()) {
+        Alamofire.request(Networking.baseURL.rawValue + "\(externalID)", method: .get, parameters: params).responseJSON { (response) in
+            if let error = response.error {
+                fail(error.localizedDescription)
+            } else {
+                if let value = response.value {
+                    if let filmInstance = Film(json: JSON(value)) {
+                        succes(filmInstance)
+                    }
+                }
+            }
+        }
+    }
+    
+    func getTopRated(succes: @escaping ([Film])->(), fail: @escaping (String)->()) {
+        Alamofire.request(Networking.baseURL.rawValue + Networking.topRated.rawValue, method: .get, parameters: params).responseJSON { (response) in
             if let error = response.error {
                 fail(error.localizedDescription)
             } else {
@@ -37,19 +72,6 @@ class NetworkManager {
             } else {
                 if let data = response.data, let image = UIImage(data: data) {
                     succes(image)
-                }
-            }
-        }
-    }
-    
-    func getMovieDetail (url _url: URL, succes: @escaping (FilmDetail)->(), fail: @escaping (String)->()) {
-        Alamofire.request(_url, method: .get, parameters: params).responseJSON(queue: kUserInitiatedGQ) { (response) in
-            if let error = response.error {
-                fail(error.localizedDescription)
-            } else {
-                if let value = response.value {
-//                    succes(FilmDetail.parseJSON(json: JSON(value)))
-                    succes(FilmDetail(json: JSON(value))!)
                 }
             }
         }

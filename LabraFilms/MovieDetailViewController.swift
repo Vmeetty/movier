@@ -9,7 +9,7 @@
 import UIKit
 
 class MovieDetailViewController: UIViewController {
-
+    
     @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -20,21 +20,21 @@ class MovieDetailViewController: UIViewController {
         super.viewDidLoad()
         loadMovieInfo()
     }
-
+    
     func loadMovieInfo () {
-        if let url = URL(string: Networking.baseURL.rawValue + String(self.movieID)) {
-            NetworkManager.sharedInstance.getMovieDetail(url: url, succes: { (details) in
-                self.titleLabel.text = details.title
-                self.descriptionLabel.text = details.overview
-                self.loadMoviePicture(details: details)
-            }) { (errorStr) in
-                print(errorStr)
+        NetworkManager.sharedInstance.getMovie(by: self.movieID, succes: { (movie) in
+            kMainQueue.async {
+                self.titleLabel.text = movie.title
+                self.descriptionLabel.text = movie.overview
+                self.loadMoviePicture(movie: movie)
             }
+        }) { (errorStr) in
+            print(errorStr)
         }
     }
     
-    func loadMoviePicture (details: FilmDetail) {
-        if let url = URL(string: Networking.baseURLposter.rawValue + Networking.posterSize.rawValue + details.picturePath) {
+    func loadMoviePicture (movie: Film) {
+        if let url = URL(string: Networking.baseURLposter.rawValue + Networking.posterSize.rawValue + movie.backdropPath) {
             NetworkManager.sharedInstance.getPosterImage(url: url, succes: { (image) in
                 kMainQueue.async {
                     self.posterImageView.image = image
@@ -45,7 +45,7 @@ class MovieDetailViewController: UIViewController {
             })
         }
     }
-
+    
     @IBAction func backAction(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
