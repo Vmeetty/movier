@@ -21,7 +21,6 @@
 		F509433A1F4C558900E42A7C /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50943391F4C558900E42A7C /* Film.swift */; };
 		F509433D1F4C58BB00E42A7C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F509433C1F4C58BB00E42A7C /* NetworkManager.swift */; };
 		F54E22291F52E070000DB442 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54E22281F52E070000DB442 /* BaseViewController.swift */; };
-		F5EBD2C41F4F0D3500DFB444 /* Caps.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EBD2C31F4F0D3500DFB444 /* Caps.swift */; };
 		F5EBDB3B1F517D0500AA5B0D /* ActionSheets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EBDB3A1F517D0500AA5B0D /* ActionSheets.swift */; };
 		F5EBDB3D1F51811000AA5B0D /* VideoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EBDB3C1F51811000AA5B0D /* VideoProvider.swift */; };
 		F5F1E1AB1F53F1C0005F40AA /* Series.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F1E1AA1F53F1C0005F40AA /* Series.swift */; };
@@ -72,7 +71,6 @@
 		F50943391F4C558900E42A7C /* Film.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
 		F509433C1F4C58BB00E42A7C /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F54E22281F52E070000DB442 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		F5EBD2C31F4F0D3500DFB444 /* Caps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Caps.swift; sourceTree = "<group>"; };
 		F5EBDB3A1F517D0500AA5B0D /* ActionSheets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheets.swift; sourceTree = "<group>"; };
 		F5EBDB3C1F51811000AA5B0D /* VideoProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoProvider.swift; sourceTree = "<group>"; };
 		F5F1E1AA1F53F1C0005F40AA /* Series.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Series.swift; sourceTree = "<group>"; };
@@ -158,9 +156,6 @@
 				F50943081F4C4DBC00E42A7C /* Main.storyboard */,
 				F50943021F4C4DBC00E42A7C /* AppDelegate.swift */,
 				F50943371F4C545D00E42A7C /* Constants.swift */,
-				F5EBD2C31F4F0D3500DFB444 /* Caps.swift */,
-				F5EBDB3A1F517D0500AA5B0D /* ActionSheets.swift */,
-				F5EBDB3C1F51811000AA5B0D /* VideoProvider.swift */,
 				F509433B1F4C58A300E42A7C /* Managers */,
 				F50943321F4C52CC00E42A7C /* Controller */,
 				F50943331F4C52DE00E42A7C /* View */,
@@ -205,6 +200,8 @@
 		F509433B1F4C58A300E42A7C /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				F5EBDB3A1F517D0500AA5B0D /* ActionSheets.swift */,
+				F5EBDB3C1F51811000AA5B0D /* VideoProvider.swift */,
 				F509433C1F4C58BB00E42A7C /* NetworkManager.swift */,
 			);
 			name = Managers;
@@ -509,7 +506,6 @@
 				F50943381F4C545D00E42A7C /* Constants.swift in Sources */,
 				F5F86EDC1F50549E0064D1D4 /* MoreTableViewCell.swift in Sources */,
 				F509433A1F4C558900E42A7C /* Film.swift in Sources */,
-				F5EBD2C41F4F0D3500DFB444 /* Caps.swift in Sources */,
 				F50943071F4C4DBC00E42A7C /* SeriesViewController.swift in Sources */,
 				F54E22291F52E070000DB442 /* BaseViewController.swift in Sources */,
 				F509433D1F4C58BB00E42A7C /* NetworkManager.swift in Sources */,

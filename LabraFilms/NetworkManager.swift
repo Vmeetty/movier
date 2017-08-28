@@ -14,13 +14,8 @@ class NetworkManager {
     
     static let sharedInstance = NetworkManager()
     private init(){}
-    
-    //************
-    // ***** fix that stuff. It's have to be put into enum or it's shoud be some list of params
-    //    private let params: [String:Any] = ["api_key":"6612c1c2ce2d96fa707ae10e6b3bba43", "page":31]
+
     private let params: [String:Any] = ["api_key":"6612c1c2ce2d96fa707ae10e6b3bba43"]
-    //************
-    
     
     // get movie
     func getMovie(with counter: Int, and params: [String:Any], succes: @escaping ([Film])->(), fail: @escaping (String)->()) {
@@ -41,6 +36,7 @@ class NetworkManager {
             }
         }
     }
+    
     func getMovie(by externalID: Int, succes: @escaping (Film)->(), fail: @escaping (String)->()) {
         kUserInitiatedGQ.async {
             Alamofire.request(Networking.baseURL.rawValue + "\(externalID)", method: .get, parameters: self.params).responseJSON { (response) in
@@ -64,7 +60,6 @@ class NetworkManager {
         } else {
             baseURL = Networking.baseURLserries.rawValue
         }
-
         Alamofire.request(baseURL + filter, method: .get, parameters: params).responseJSON { (response) in
             if let error = response.error {
                 fail(error.localizedDescription)
