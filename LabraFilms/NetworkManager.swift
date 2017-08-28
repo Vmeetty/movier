@@ -14,32 +14,10 @@ class NetworkManager {
     
     static let sharedInstance = NetworkManager()
     private init(){}
-
-    private let params: [String:Any] = ["api_key":"6612c1c2ce2d96fa707ae10e6b3bba43"]
     
-    // get movie
-    func getMovie(with counter: Int, and params: [String:Any], succes: @escaping ([Film])->(), fail: @escaping (String)->()) {
+    func getMovie(by externalID: Int, params: [String:Any], succes: @escaping (Film)->(), fail: @escaping (String)->()) {
         kUserInitiatedGQ.async {
-            for id in counter...counter + 20 {
-                Alamofire.request(Networking.baseURL.rawValue + "\(id)", method: .get, parameters: params).responseJSON { (response) in
-                    if let error = response.error {
-                        fail(error.localizedDescription)
-                    } else {
-                        if let value = response.value {
-                            let movieInstance = Film.parseJSON(json: JSON(value))
-                            kMainQueue.async {
-                                succes(movieInstance)
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    
-    func getMovie(by externalID: Int, succes: @escaping (Film)->(), fail: @escaping (String)->()) {
-        kUserInitiatedGQ.async {
-            Alamofire.request(Networking.baseURL.rawValue + "\(externalID)", method: .get, parameters: self.params).responseJSON { (response) in
+            Alamofire.request(Networking.baseURL.rawValue + "\(externalID)", method: .get, parameters: params).responseJSON { (response) in
                 if let error = response.error {
                     fail(error.localizedDescription)
                 } else {
@@ -65,7 +43,6 @@ class NetworkManager {
                 fail(error.localizedDescription)
             } else {
                 if let value = response.value {
-                    print(JSON(value))
                     if type == .Movies {
                         succes(Film.parseJSON(json: JSON(value)))
                     } else {

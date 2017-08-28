@@ -20,19 +20,6 @@ class MovieViewController: BaseViewController {
 
 
 
-// delete this
-
-//extension MovieViewController: AddMoreMovieItems {
-//    func addItems(model: Film) {
-//        films.append(model)
-////        myTableView.reloadData()
-//    }
-//}
-
-
-
-
-
 
 
 

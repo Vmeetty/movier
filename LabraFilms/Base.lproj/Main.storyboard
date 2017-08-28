@@ -170,7 +170,6 @@
                                 <action selector="filtrAction:" destination="9pv-A4-QxB" id="v66-aP-avw"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="anK-cm-Acl"/>
                     </navigationItem>
                     <connections>
                         <outlet property="myTableView" destination="VBe-v2-xo0" id="jRA-Cy-Cnc"/>
@@ -418,7 +417,6 @@
                                 <action selector="filtrAction:" destination="Iv1-DE-KDD" id="dgB-rD-gg7"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="ZfU-2b-8o4"/>
                     </navigationItem>
                     <connections>
                         <outlet property="myTableView" destination="sBj-Mz-lkK" id="9lr-YC-CgL"/>
@@ -427,13 +425,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D94-a9-qQf" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3474.4000000000001" y="82.3088455772114"/>
+            <point key="canvasLocation" x="3474" y="37"/>
         </scene>
         <!--Movies-->
         <scene sceneID="Ne1-Fd-m1N">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Cm3-cr-RgZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Movies" id="e2d-j0-WF7"/>
+                    <tabBarItem key="tabBarItem" title="Movies" image="first" id="e2d-j0-WF7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rjr-Vk-PfW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -452,7 +450,7 @@
         <scene sceneID="iDS-uE-cnU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7wE-d4-5Ri" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Serries" id="QpM-c9-5ek"/>
+                    <tabBarItem key="tabBarItem" title="Serries" image="second" id="QpM-c9-5ek"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XmH-zz-TRV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -488,6 +486,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="first" width="30" height="30"/>
+        <image name="second" width="30" height="30"/>
         <image name="star" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>

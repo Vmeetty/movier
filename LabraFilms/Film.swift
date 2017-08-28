@@ -49,15 +49,5 @@ class Film {
         }
         return returnArray
     }
-//    static func parseJSONAllMovie (json: JSON) -> Film {
-//        var result: Film?
-//        if let result = json {
-//            for movie in resultArray {
-//                if let unwrapedJSON = Film(json: movie) {
-//                    returnArray.append(unwrapedJSON)
-//                }
-//            }
-//        }
-//        return result
-//    }
+
 }

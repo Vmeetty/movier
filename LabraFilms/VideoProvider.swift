@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class VideoProvider {
     
@@ -14,22 +15,27 @@ class VideoProvider {
     private init(){}
     var counter = 1
     
-    func loadMovies (complitionHandler: @escaping (Film)->()) {
-        for id in counter...counter + 20 {
-            NetworkManager.sharedInstance.getMovie (by: id, succes: { (film) in
-                complitionHandler(film)
+    func getMovie (sender: UIViewController) {
+        let params: [String:Any] = ["api_key":Networking.apiKey.rawValue]
+        if let sender = sender as? MovieDetailViewController {
+            NetworkManager.sharedInstance.getMovie(by: sender.movieID, params: params, succes: { (movie) in
+                kMainQueue.async {
+                    sender.titleLabel.text = movie.title
+                    sender.descriptionLabel.text = movie.overview
+                    sender.loadMoviePicture(movie: movie)
+                }
             }) { (errorStr) in
                 print(errorStr)
             }
         }
-        counter += 21
+        
     }
     
     func loadFiltered (page: Int,
                        contentType: ContentType,
                        filter: String,
                        complitionHandler: @escaping ([Any])->()) {
-        let params: [String:Any] = ["api_key":"6612c1c2ce2d96fa707ae10e6b3bba43", "page": page]
+        let params: [String:Any] = ["api_key":Networking.apiKey.rawValue, "page":page]
         NetworkManager.sharedInstance.getFiltered(type: contentType, filter: filter, params: params, succes: { (result) in
             complitionHandler(result)
         }) { (errorStr) in

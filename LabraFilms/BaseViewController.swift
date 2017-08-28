@@ -18,17 +18,10 @@ class BaseViewController: UIViewController {
     var spinnerFlag = true
     var moviePage = 1
     var seriesPage = 1
-    
-    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//    }
-    
+
     func updateVideos (contentType: ContentType, page: Int) {
         self.contentType = contentType
-        VideoProvider.sharedInstance.loadFiltered(page: page,
-                                                  contentType: contentType,
-                                                  filter: self.filterFlag) { (result) in
+        VideoProvider.sharedInstance.loadFiltered(page: page, contentType: contentType, filter: self.filterFlag) { (result) in
             self.films.append(contentsOf: result)
             self.myTableView.reloadData()
             self.spinnerFlag = false
@@ -51,6 +44,7 @@ class BaseViewController: UIViewController {
 }
 
 extension BaseViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return films.count + 1
     }
@@ -91,7 +85,6 @@ extension BaseViewController: UITableViewDelegate {
                 seriesPage += 1
                 updateVideos(contentType: contentType, page: seriesPage)
             }
-            
             moreCell.startSpinner = true
         } else {
             let cell = tableView.cellForRow(at: indexPath)

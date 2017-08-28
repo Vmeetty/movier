@@ -8,8 +8,6 @@
 
 import Foundation
 
-var page = 1
-
 // queues constants
 let kUserInteractiveGQ = DispatchQueue.global(qos: .userInteractive)
 let kUserInitiatedGQ = DispatchQueue.global(qos: .userInitiated)

@@ -22,15 +22,7 @@ class MovieDetailViewController: UIViewController {
     }
     
     func loadMovieInfo () {
-        NetworkManager.sharedInstance.getMovie(by: self.movieID, succes: { (movie) in
-            kMainQueue.async {
-                self.titleLabel.text = movie.title
-                self.descriptionLabel.text = movie.overview
-                self.loadMoviePicture(movie: movie)
-            }
-        }) { (errorStr) in
-            print(errorStr)
-        }
+        VideoProvider.sharedInstance.getMovie(sender: self)
     }
     
     func loadMoviePicture (movie: Film) {
