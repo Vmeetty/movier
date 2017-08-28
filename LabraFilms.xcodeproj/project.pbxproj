@@ -16,15 +16,18 @@
 		F509430A1F4C4DBC00E42A7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F50943081F4C4DBC00E42A7C /* Main.storyboard */; };
 		F509430C1F4C4DBC00E42A7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F509430B1F4C4DBC00E42A7C /* Assets.xcassets */; };
 		F509430F1F4C4DBC00E42A7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F509430D1F4C4DBC00E42A7C /* LaunchScreen.storyboard */; };
-		F509431A1F4C4DBC00E42A7C /* LabraFilmsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50943191F4C4DBC00E42A7C /* LabraFilmsTests.swift */; };
-		F50943251F4C4DBC00E42A7C /* LabraFilmsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50943241F4C4DBC00E42A7C /* LabraFilmsUITests.swift */; };
 		F50943361F4C532F00E42A7C /* FilmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50943351F4C532F00E42A7C /* FilmTableViewCell.swift */; };
 		F50943381F4C545D00E42A7C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50943371F4C545D00E42A7C /* Constants.swift */; };
 		F509433A1F4C558900E42A7C /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50943391F4C558900E42A7C /* Film.swift */; };
 		F509433D1F4C58BB00E42A7C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F509433C1F4C58BB00E42A7C /* NetworkManager.swift */; };
+		F54E22291F52E070000DB442 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54E22281F52E070000DB442 /* BaseViewController.swift */; };
 		F5EBD2C41F4F0D3500DFB444 /* Caps.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EBD2C31F4F0D3500DFB444 /* Caps.swift */; };
+		F5EBDB3B1F517D0500AA5B0D /* ActionSheets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EBDB3A1F517D0500AA5B0D /* ActionSheets.swift */; };
+		F5EBDB3D1F51811000AA5B0D /* VideoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EBDB3C1F51811000AA5B0D /* VideoProvider.swift */; };
+		F5F1E1AB1F53F1C0005F40AA /* Series.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F1E1AA1F53F1C0005F40AA /* Series.swift */; };
 		F5F5E87C1F4D805F0020B33C /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F5E87B1F4D805F0020B33C /* MovieDetailViewController.swift */; };
 		F5F5E87E1F4D8A620020B33C /* FilmDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F5E87D1F4D8A620020B33C /* FilmDetail.swift */; };
+		F5F86EDC1F50549E0064D1D4 /* MoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F86EDB1F50549E0064D1D4 /* MoreTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,18 +66,19 @@
 		F509430E1F4C4DBC00E42A7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F50943101F4C4DBC00E42A7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F50943151F4C4DBC00E42A7C /* LabraFilmsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LabraFilmsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F50943191F4C4DBC00E42A7C /* LabraFilmsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabraFilmsTests.swift; sourceTree = "<group>"; };
-		F509431B1F4C4DBC00E42A7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F50943201F4C4DBC00E42A7C /* LabraFilmsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LabraFilmsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F50943241F4C4DBC00E42A7C /* LabraFilmsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabraFilmsUITests.swift; sourceTree = "<group>"; };
-		F50943261F4C4DBC00E42A7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F50943351F4C532F00E42A7C /* FilmTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilmTableViewCell.swift; sourceTree = "<group>"; };
 		F50943371F4C545D00E42A7C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F50943391F4C558900E42A7C /* Film.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
 		F509433C1F4C58BB00E42A7C /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		F54E22281F52E070000DB442 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F5EBD2C31F4F0D3500DFB444 /* Caps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Caps.swift; sourceTree = "<group>"; };
+		F5EBDB3A1F517D0500AA5B0D /* ActionSheets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheets.swift; sourceTree = "<group>"; };
+		F5EBDB3C1F51811000AA5B0D /* VideoProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoProvider.swift; sourceTree = "<group>"; };
+		F5F1E1AA1F53F1C0005F40AA /* Series.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Series.swift; sourceTree = "<group>"; };
 		F5F5E87B1F4D805F0020B33C /* MovieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		F5F5E87D1F4D8A620020B33C /* FilmDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilmDetail.swift; sourceTree = "<group>"; };
+		F5F86EDB1F50549E0064D1D4 /* MoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,8 +136,6 @@
 			isa = PBXGroup;
 			children = (
 				F50943011F4C4DBC00E42A7C /* LabraFilms */,
-				F50943181F4C4DBC00E42A7C /* LabraFilmsTests */,
-				F50943231F4C4DBC00E42A7C /* LabraFilmsUITests */,
 				F50943001F4C4DBC00E42A7C /* Products */,
 				A2265B4E5D9448B56762BA25 /* Pods */,
 				72E1FF87E39083ACF4D0A222 /* Frameworks */,
@@ -157,6 +159,8 @@
 				F50943021F4C4DBC00E42A7C /* AppDelegate.swift */,
 				F50943371F4C545D00E42A7C /* Constants.swift */,
 				F5EBD2C31F4F0D3500DFB444 /* Caps.swift */,
+				F5EBDB3A1F517D0500AA5B0D /* ActionSheets.swift */,
+				F5EBDB3C1F51811000AA5B0D /* VideoProvider.swift */,
 				F509433B1F4C58A300E42A7C /* Managers */,
 				F50943321F4C52CC00E42A7C /* Controller */,
 				F50943331F4C52DE00E42A7C /* View */,
@@ -168,30 +172,13 @@
 			path = LabraFilms;
 			sourceTree = "<group>";
 		};
-		F50943181F4C4DBC00E42A7C /* LabraFilmsTests */ = {
-			isa = PBXGroup;
-			children = (
-				F50943191F4C4DBC00E42A7C /* LabraFilmsTests.swift */,
-				F509431B1F4C4DBC00E42A7C /* Info.plist */,
-			);
-			path = LabraFilmsTests;
-			sourceTree = "<group>";
-		};
-		F50943231F4C4DBC00E42A7C /* LabraFilmsUITests */ = {
-			isa = PBXGroup;
-			children = (
-				F50943241F4C4DBC00E42A7C /* LabraFilmsUITests.swift */,
-				F50943261F4C4DBC00E42A7C /* Info.plist */,
-			);
-			path = LabraFilmsUITests;
-			sourceTree = "<group>";
-		};
 		F50943321F4C52CC00E42A7C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F54E22281F52E070000DB442 /* BaseViewController.swift */,
 				F50943041F4C4DBC00E42A7C /* MovieViewController.swift */,
-				F5F5E87B1F4D805F0020B33C /* MovieDetailViewController.swift */,
 				F50943061F4C4DBC00E42A7C /* SeriesViewController.swift */,
+				F5F5E87B1F4D805F0020B33C /* MovieDetailViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -200,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				F50943351F4C532F00E42A7C /* FilmTableViewCell.swift */,
+				F5F86EDB1F50549E0064D1D4 /* MoreTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -208,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				F50943391F4C558900E42A7C /* Film.swift */,
+				F5F1E1AA1F53F1C0005F40AA /* Series.swift */,
 				F5F5E87D1F4D8A620020B33C /* FilmDetail.swift */,
 			);
 			name = Model;
@@ -518,11 +507,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F50943381F4C545D00E42A7C /* Constants.swift in Sources */,
+				F5F86EDC1F50549E0064D1D4 /* MoreTableViewCell.swift in Sources */,
 				F509433A1F4C558900E42A7C /* Film.swift in Sources */,
 				F5EBD2C41F4F0D3500DFB444 /* Caps.swift in Sources */,
 				F50943071F4C4DBC00E42A7C /* SeriesViewController.swift in Sources */,
+				F54E22291F52E070000DB442 /* BaseViewController.swift in Sources */,
 				F509433D1F4C58BB00E42A7C /* NetworkManager.swift in Sources */,
+				F5EBDB3D1F51811000AA5B0D /* VideoProvider.swift in Sources */,
 				F5F5E87C1F4D805F0020B33C /* MovieDetailViewController.swift in Sources */,
+				F5F1E1AB1F53F1C0005F40AA /* Series.swift in Sources */,
+				F5EBDB3B1F517D0500AA5B0D /* ActionSheets.swift in Sources */,
 				F50943361F4C532F00E42A7C /* FilmTableViewCell.swift in Sources */,
 				F50943031F4C4DBC00E42A7C /* AppDelegate.swift in Sources */,
 				F50943051F4C4DBC00E42A7C /* MovieViewController.swift in Sources */,
@@ -534,7 +528,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F509431A1F4C4DBC00E42A7C /* LabraFilmsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,7 +535,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F50943251F4C4DBC00E42A7C /* LabraFilmsUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

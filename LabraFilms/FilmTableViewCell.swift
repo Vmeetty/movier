@@ -23,6 +23,11 @@ class FilmTableViewCell: UITableViewCell {
             configCell()
         }
     }
+    var series: Series? {
+        didSet {
+            configCell()
+        }
+    }
     
     var imageURL: URL? {
         didSet {
@@ -32,28 +37,49 @@ class FilmTableViewCell: UITableViewCell {
     }
     
     private func configCell () {
-        if let url = imageURL, let movie = film {
+        if let url = imageURL {
             spinner.startAnimating()
             DispatchQueue.global(qos: .userInitiated).async {
                 let contentsOfURL = try? Data(contentsOf: url)
                 DispatchQueue.main.async {
-                    if url == self.imageURL && movie === self.film {
-                        if let imageData = contentsOfURL {
-                            self.posterImageView?.image = UIImage(data: imageData)
-                            self.posterImageView?.image = UIImage(data: imageData)
-                            self.videoNameLabel.text = movie.title
-                            self.averageLabel.text = String(movie.average)
-                            self.descriptionLabel.text = movie.overview
-                            self.posterConteinerView.layer.cornerRadius = 5
-                            self.posterConteinerView.clipsToBounds = true
-                            self.posterImageView.contentMode = .scaleAspectFill
+                    if let movie = self.film {
+                        if url == self.imageURL && movie === self.film {
+                            if let imageData = contentsOfURL {
+                                self.configUI(data: imageData, content: movie)
+                            }
+                            self.spinner.stopAnimating()
+                            self.spinner.hidesWhenStopped = true
                         }
-                        self.spinner.stopAnimating()
-                        self.spinner.hidesWhenStopped = true
+                    } else if let series = self.series {
+                        if url == self.imageURL && series === self.series {
+                            if let imageData = contentsOfURL {
+                                self.configUI(data: imageData, content: series)
+                            }
+                            self.spinner.stopAnimating()
+                            self.spinner.hidesWhenStopped = true
+                        }
                     }
+                    
                 }
             }
         }
+    }
+    
+    private func configUI (data: Data, content: Any) {
+        self.posterImageView?.image = UIImage(data: data)
+        self.posterImageView?.image = UIImage(data: data)
+        if let movie = content as? Film {
+            self.videoNameLabel.text = movie.title
+            self.averageLabel.text = String(movie.average)
+            self.descriptionLabel.text = movie.overview
+        } else if let series = content as? Series {
+            self.videoNameLabel.text = series.title
+            self.averageLabel.text = String(series.average)
+            self.descriptionLabel.text = series.overview
+        }
+        self.posterConteinerView.layer.cornerRadius = 5
+        self.posterConteinerView.clipsToBounds = true
+        self.posterImageView.contentMode = .scaleAspectFill
     }
     
 }

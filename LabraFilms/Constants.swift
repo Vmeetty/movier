@@ -8,7 +8,7 @@
 
 import Foundation
 
-let filmCellID = "FilmTableViewCell"
+var page = 1
 
 // queues constants
 let kUserInteractiveGQ = DispatchQueue.global(qos: .userInteractive)
@@ -22,6 +22,7 @@ let kMainQueue = DispatchQueue.main
 enum CellIDs: String {
     case filmCellID = "FilmTableViewCell"
     case seriesCellID = "SeriesTableViewCell"
+    case moreCellID = "MoreTableViewCell"
 }
 
 // segue identifires
@@ -33,9 +34,28 @@ enum SegueIDs: String {
 enum Networking: String {
     case apiKey = "6612c1c2ce2d96fa707ae10e6b3bba43"
     case baseURL = "https://api.themoviedb.org/3/movie/"
+    case baseURLserries = "https://api.themoviedb.org/3/tv/"
     case movie = "3/movie/"
     case topRated = "top_rated"
     case latest = "latest"
     case baseURLposter = "https://image.tmdb.org/t/p/"
     case posterSize = "w370"
+}
+
+// filter flags
+enum Filter: String {
+    case popular = "popular"
+    case topRated = "top_rated"
+    case nowPlaying = "now_playing"
+    case onTheAir = "on_the_air"
+}
+
+enum ContentType {
+    case Movies
+    case Serries
+}
+
+enum Page {
+    case moviePage(page: Int)
+    case seriesPage(page: Int)
 }
