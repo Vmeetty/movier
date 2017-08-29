@@ -23,7 +23,7 @@ class MovieDetailViewController: UIViewController {
     }
     
     func loadMovieInfo () {
-        VideoProvider.sharedInstance.getMovie(sender: self, contentType: contentType) { (result) in
+        VideoProvider.sharedInstance.getMovie(movieID: self.movieID, contentType: contentType) { (result) in
             if let movie = result as? Film {
                 self.titleLabel.text = movie.title
                 self.descriptionLabel.text = movie.overview

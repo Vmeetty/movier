@@ -12,7 +12,9 @@ class SeriesViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateVideos(contentType: .Serries, page: seriesPage)
+        contentType = .Serries
+        updateVideos(contentType: contentType, page: seriesPage)
     }
+
 }
 

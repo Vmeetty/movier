@@ -20,7 +20,6 @@ class BaseViewController: UIViewController {
     var seriesPage = 1
 
     func updateVideos (contentType: ContentType, page: Int) {
-        self.contentType = contentType
         VideoProvider.sharedInstance.loadFiltered(page: page, contentType: contentType, filter: self.filterFlag) { (result) in
             self.films.append(contentsOf: result)
             self.myTableView.reloadData()

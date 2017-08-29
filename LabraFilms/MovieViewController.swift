@@ -12,8 +12,10 @@ class MovieViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateVideos(contentType: .Movies, page: moviePage)
+        contentType = .Movies
+        updateVideos(contentType: contentType, page: moviePage)
     }
+
 }
 
 

@@ -40,6 +40,11 @@ enum Networking: String {
     case posterSize = "w370"
 }
 
+enum SearchingBaseURLs: String {
+    case searchMovieBaseURL = "https://api.themoviedb.org/3/search/movie"
+    case searchSeriesBaseURL = "https://api.themoviedb.org/3/search/tv"
+}
+
 // filter flags
 enum Filter: String {
     case popular = "popular"
