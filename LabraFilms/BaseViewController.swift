@@ -32,6 +32,7 @@ class BaseViewController: UIViewController {
         if segue.identifier == SegueIDs.movieDetailSegueID.rawValue {
             if let detailVC = segue.destination as? MovieDetailViewController {
                 detailVC.movieID = self.movieID
+                detailVC.contentType = self.contentType
             }
         }
     }

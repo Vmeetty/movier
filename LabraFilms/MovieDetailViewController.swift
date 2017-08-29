@@ -15,6 +15,7 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     
     var movieID = 0
+    var contentType: ContentType!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,19 +23,23 @@ class MovieDetailViewController: UIViewController {
     }
     
     func loadMovieInfo () {
-        VideoProvider.sharedInstance.getMovie(sender: self)
+        VideoProvider.sharedInstance.getMovie(sender: self, contentType: contentType) { (result) in
+            if let movie = result as? Film {
+                self.titleLabel.text = movie.title
+                self.descriptionLabel.text = movie.overview
+                self.loadMoviePicture(movie: movie)
+            } else if let series = result as? Series {
+                self.titleLabel.text = series.title
+                self.descriptionLabel.text = series.overview
+                self.loadMoviePicture(movie: series)
+            }
+        }
     }
     
-    func loadMoviePicture (movie: Film) {
-        if let url = URL(string: Networking.baseURLposter.rawValue + Networking.posterSize.rawValue + movie.backdropPath) {
-            NetworkManager.sharedInstance.getPosterImage(url: url, succes: { (image) in
-                kMainQueue.async {
-                    self.posterImageView.image = image
-                    self.posterImageView.contentMode = .scaleAspectFill
-                }
-            }, fail: { (errorStr) in
-                print(errorStr)
-            })
+    func loadMoviePicture (movie: Any) {
+        VideoProvider.sharedInstance.getPicture(video: movie) { (image) in
+            self.posterImageView.image = image
+            self.posterImageView.contentMode = .scaleAspectFill
         }
     }
     

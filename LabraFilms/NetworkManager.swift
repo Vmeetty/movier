@@ -15,15 +15,27 @@ class NetworkManager {
     static let sharedInstance = NetworkManager()
     private init(){}
     
-    func getMovie(by externalID: Int, params: [String:Any], succes: @escaping (Film)->(), fail: @escaping (String)->()) {
+    func getMovie(by externalID: Int, type: ContentType, params: [String:Any], succes: @escaping (Any)->(), fail: @escaping (String)->()) {
+        var baseURL = Networking.baseURL.rawValue
+        if type == .Movies {
+            baseURL = Networking.baseURL.rawValue
+        } else {
+            baseURL = Networking.baseURLserries.rawValue
+        }
         kUserInitiatedGQ.async {
-            Alamofire.request(Networking.baseURL.rawValue + "\(externalID)", method: .get, parameters: params).responseJSON { (response) in
+            Alamofire.request(baseURL + "\(externalID)", method: .get, parameters: params).responseJSON { (response) in
                 if let error = response.error {
                     fail(error.localizedDescription)
                 } else {
                     if let value = response.value {
-                        if let filmInstance = Film(json: JSON(value)) {
-                            succes(filmInstance)
+                        if type == .Movies {
+                            if let filmInstance = Film(json: JSON(value)) {
+                                succes(filmInstance)
+                            }
+                        } else {
+                            if let seriesInstance = Series(json: JSON(value)) {
+                                succes(seriesInstance)
+                            }
                         }
                     }
                 }
@@ -43,6 +55,7 @@ class NetworkManager {
                 fail(error.localizedDescription)
             } else {
                 if let value = response.value {
+                    print(JSON(value))
                     if type == .Movies {
                         succes(Film.parseJSON(json: JSON(value)))
                     } else {
