@@ -43,8 +43,4 @@ class MovieDetailViewController: UIViewController {
         }
     }
     
-    @IBAction func backAction(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
 }

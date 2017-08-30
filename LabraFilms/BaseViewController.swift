@@ -34,9 +34,10 @@ class BaseViewController: UIViewController {
                 detailVC.movieID = self.movieID
                 detailVC.contentType = self.contentType
             }
-        } else if segue.identifier == SegueIDs.searchSegueID.rawValue {
+        }
+        else if segue.identifier == SegueIDs.searchSegueID.rawValue {
             if let searchVC = segue.destination as? SearchViewController {
-                searchVC.type = self.contentType
+                searchVC.setType(type: self.contentType)
             }
         }
     }

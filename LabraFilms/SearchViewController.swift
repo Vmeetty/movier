@@ -11,15 +11,19 @@ import UIKit
 class SearchViewController: BaseViewController {
     
     @IBOutlet weak var searchSearchBar: UISearchBar!
-    var type: ContentType!
+    var type: ContentType?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         spinnerFlag = false
     }
     
-    @IBAction func close(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+    func setType (type: ContentType) {
+        self.type = type
+    }
+    
+    @IBAction func close(_ sender: UIBarButtonItem) {
+        _ = navigationController?.popViewController(animated: true)
     }
     
 }
@@ -29,7 +33,9 @@ extension SearchViewController: UISearchBarDelegate {
         self.films.removeAll()
         let keywords = searchBar.text
         query = keywords!
-        updateVideos(contentType: type!, page: 1, query: query)
+        if let type = type {
+            updateVideos(contentType: type, page: 1, query: query)
+        }
         searchBar.endEditing(true) 
     }
 }
