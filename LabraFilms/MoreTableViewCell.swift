@@ -8,24 +8,15 @@
 
 import UIKit
 
-protocol AddMoreMovieItems {
-    func addItems (model: Film)
-}
-
 class MoreTableViewCell: UITableViewCell {
 
     @IBOutlet weak var loadMoreLabel: UILabel!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
-    var delegate: AddMoreMovieItems?
     var startSpinner: Bool? {
         didSet {
             configSpinner()
         }
-    }
-    
-    func moreAction (model: Film) {
-        delegate?.addItems(model: model)
     }
 
     func configSpinner () {

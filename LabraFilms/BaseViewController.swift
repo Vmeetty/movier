@@ -85,10 +85,10 @@ extension BaseViewController: UITableViewDelegate {
             let moreCell = tableView.cellForRow(at: indexPath) as! MoreTableViewCell
             if contentType == .Movies {
                 moviePage += 1
-                updateVideos(contentType: contentType, page: moviePage)
+                updateVideos(contentType: contentType, page: moviePage, query: query)
             } else {
                 seriesPage += 1
-                updateVideos(contentType: contentType, page: seriesPage)
+                updateVideos(contentType: contentType, page: seriesPage, query: query)
             }
             moreCell.startSpinner = true
         } else {
