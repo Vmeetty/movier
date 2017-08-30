@@ -18,10 +18,11 @@ class BaseViewController: UIViewController {
     var spinnerFlag = true
     var moviePage = 1
     var seriesPage = 1
-
-    func updateVideos (contentType: ContentType, page: Int) {
-        VideoProvider.sharedInstance.loadFiltered(page: page, contentType: contentType, filter: self.filterFlag) { (result) in
-            self.films.append(contentsOf: result)
+    var query: String? = nil
+    
+    func updateVideos (contentType: ContentType, page: Int, query: String? = nil) {
+        VideoProvider.sharedInstance.loadVideos(contentType: contentType, page: page, filter: self.filterFlag, query: query) { (results) in
+            self.films.append(contentsOf: results)
             self.myTableView.reloadData()
             self.spinnerFlag = false
         }
@@ -32,6 +33,10 @@ class BaseViewController: UIViewController {
             if let detailVC = segue.destination as? MovieDetailViewController {
                 detailVC.movieID = self.movieID
                 detailVC.contentType = self.contentType
+            }
+        } else if segue.identifier == SegueIDs.searchSegueID.rawValue {
+            if let searchVC = segue.destination as? SearchViewController {
+                searchVC.type = self.contentType
             }
         }
     }

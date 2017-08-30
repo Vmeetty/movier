@@ -11,21 +11,15 @@ import UIKit
 class SearchViewController: BaseViewController {
     
     @IBOutlet weak var searchSearchBar: UISearchBar!
+    var type: ContentType?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         spinnerFlag = false
-    }
-
-    func searchContent (query: String) {
-        VideoProvider.sharedInstance.searcher(contentType: contentType, query: query) { (results) in
-            self.films = results
-            self.myTableView.reloadData()
-        }
     }
     
     @IBAction func close(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
 
 }
@@ -33,7 +27,12 @@ class SearchViewController: BaseViewController {
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let keywords = searchBar.text
-        searchContent(query: keywords!)
+        query = keywords!
+        if type == .Movies {
+            updateVideos(contentType: type!, page: moviePage, query: query)
+        } else {
+            updateVideos(contentType: type!, page: seriesPage, query: query)
+        }
         searchBar.endEditing(true)
     }
 }

@@ -14,10 +14,20 @@ class VideoProvider {
     static let sharedInstance = VideoProvider()
     private init(){}
     var counter = 1
+    var params: [String:Any] = ["api_key":Networking.apiKey.rawValue]
     
-    func getMovie (movieID: Int, contentType: ContentType, complitionHandler: @escaping (Any)->()) {
-        let params: [String:Any] = ["api_key":Networking.apiKey.rawValue]
-        NetworkManager.sharedInstance.getMovie(by: movieID, type: contentType, params: params, succes: { (movie) in
+    func getMovie(movieID: Int, contentType: ContentType, complitionHandler: @escaping (Any)->()) {
+        var url = ""
+        if contentType == .Movies {
+            url = Networking.baseURL.rawValue
+        } else {
+            url = Networking.baseURLserries.rawValue
+        }
+        params["page"] = nil
+        params["query"] = nil
+        params["include_adult"] = nil
+        let finalURL = url + String(movieID)
+        NetworkManager.sharedInstance.getMovie(url: finalURL, type: contentType, params: params, succes: { (movie) in
             kMainQueue.async {
                 complitionHandler(movie)
             }
@@ -26,9 +36,25 @@ class VideoProvider {
         }
     }
     
-    func loadFiltered (page: Int, contentType: ContentType, filter: String, complitionHandler: @escaping ([Any])->()) {
-        let params: [String:Any] = ["api_key":Networking.apiKey.rawValue, "page":page]
-        NetworkManager.sharedInstance.getFiltered(type: contentType, filter: filter, params: params, succes: { (result) in
+    func loadVideos(contentType: ContentType, page: Int, filter: String? = nil, query: String? = nil, complitionHandler: @escaping ([Any])->()) {
+        var finalURL = ""
+        params["page"] = page
+        params["include_adult"] = false
+        if let query = query {
+            params["query"] = query
+            if contentType == .Movies {
+                finalURL = SearchingBaseURLs.searchMovieBaseURL.rawValue
+            } else {
+                finalURL = SearchingBaseURLs.searchSeriesBaseURL.rawValue
+            }
+        } else if let filter = filter {
+            if contentType == .Movies {
+                finalURL = Networking.baseURL.rawValue + filter
+            } else {
+                finalURL = Networking.baseURLserries.rawValue + filter
+            }
+        }
+        NetworkManager.sharedInstance.getVideos(type: contentType, url: finalURL, params: params, succes: { (result) in
             kMainQueue.async {
                 complitionHandler(result)
             }
@@ -53,21 +79,7 @@ class VideoProvider {
                 print(errorStr)
             })
         }
-    }
-    
-    func searcher (contentType: ContentType, query: String, complitionHandler: @escaping ([Any]) -> ()) {
-        let params: [String:Any] = ["api_key":Networking.apiKey.rawValue, "query":query]
-        NetworkManager.sharedInstance.searchVideos(type: contentType, params: params, succes: { (results) in
-            kMainQueue.async {
-                complitionHandler(results)
-            }
-        }) { (error) in
-            print(error)
-        }
-    }
-    
-    
-    
+    }   
     
 }
 

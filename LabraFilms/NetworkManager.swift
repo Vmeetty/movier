@@ -15,15 +15,10 @@ class NetworkManager {
     static let sharedInstance = NetworkManager()
     private init(){}
     
-    func getMovie(by externalID: Int, type: ContentType, params: [String:Any], succes: @escaping (Any)->(), fail: @escaping (String)->()) {
-        var baseURL = Networking.baseURL.rawValue
-        if type == .Movies {
-            baseURL = Networking.baseURL.rawValue
-        } else {
-            baseURL = Networking.baseURLserries.rawValue
-        }
+    func getMovie(url: String, type: ContentType, params: [String:Any], succes: @escaping (Any)->(), fail: @escaping (String)->()) {
+       
         kUserInitiatedGQ.async {
-            Alamofire.request(baseURL + "\(externalID)", method: .get, parameters: params).responseJSON { (response) in
+            Alamofire.request(url, method: .get, parameters: params).responseJSON { (response) in
                 if let error = response.error {
                     fail(error.localizedDescription)
                 } else {
@@ -43,20 +38,13 @@ class NetworkManager {
         }
     }
     
-    func getFiltered(type: ContentType, filter: String, params: [String:Any], succes: @escaping ([Any])->(), fail: @escaping (String)->()) {
-        var baseURL = Networking.baseURL.rawValue
-        if type == .Movies {
-            baseURL = Networking.baseURL.rawValue
-        } else {
-            baseURL = Networking.baseURLserries.rawValue
-        }
+    func getVideos(type: ContentType, url: String, params: [String:Any], succes: @escaping ([Any])->(), fail: @escaping (String)->()) {
         kUserInitiatedGQ.async {
-            Alamofire.request(baseURL + filter, method: .get, parameters: params).responseJSON { (response) in
+            Alamofire.request(url, method: .get, parameters: params).responseJSON { (response) in
                 if let error = response.error {
                     fail(error.localizedDescription)
                 } else {
                     if let value = response.value {
-                        print(JSON(value))
                         if type == .Movies {
                             succes(Film.parseJSON(json: JSON(value)))
                         } else {
@@ -65,33 +53,7 @@ class NetworkManager {
                     }
                 }
             }
-        }  
-    }
-    
-    func searchVideos(type: ContentType, params: [String:Any], succes: @escaping ([Any])->(), fail: @escaping (String)->()) {
-        var baseURL = SearchingBaseURLs.searchMovieBaseURL.rawValue
-        if type == .Movies {
-            baseURL = SearchingBaseURLs.searchMovieBaseURL.rawValue
-        } else {
-            baseURL = SearchingBaseURLs.searchSeriesBaseURL.rawValue
         }
-        kUserInitiatedGQ.async {
-            Alamofire.request(baseURL, method: .get, parameters: params).responseJSON { (response) in
-                if let error = response.error {
-                    fail(error.localizedDescription)
-                } else {
-                    if let value = response.value {
-                        print(JSON(value))
-                        if type == .Movies {
-                            succes(Film.parseJSON(json: JSON(value)))
-                        } else {
-                            succes(Series.parseJSON(json: JSON(value)))
-                        }
-                    }
-                }
-            } 
-        }
-        
     }
     
     func getPosterImage (url _url: URL, succes: @escaping (UIImage)->(), fail: @escaping (String)->()) {

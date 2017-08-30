@@ -15,12 +15,12 @@ class ActionSheet {
     
     func configAction (by filter: String, sender: BaseViewController) {
         let path = IndexPath(row: 0, section: 0)
-        VideoProvider.sharedInstance.loadFiltered(page: 1, contentType: sender.contentType, filter: filter, complitionHandler: { (films) in
+        VideoProvider.sharedInstance.loadVideos(contentType: sender.contentType, page: 1, filter: filter) { (films) in
             sender.films = films
             sender.filterFlag = filter
             sender.myTableView.reloadData()
             sender.myTableView.scrollToRow(at: path, at: .top, animated: true)
-        })
+        }
     }
     
     func configActionSheet (sender: BaseViewController) {

@@ -39,8 +39,7 @@ class MoreTableViewCell: UITableViewCell {
                 spinner.stopAnimating()
                 loadMoreLabel.isHidden = false
             }
-        }
-        
+        }  
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

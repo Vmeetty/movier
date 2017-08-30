@@ -26,6 +26,7 @@ enum CellIDs: String {
 // segue identifires
 enum SegueIDs: String {
     case movieDetailSegueID = "MovieDetailViewController"
+    case searchSegueID = "SearchViewController"
 }
 
 // network stuff

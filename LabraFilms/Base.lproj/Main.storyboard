@@ -172,7 +172,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="mpp-L9-yi3">
                             <connections>
-                                <segue destination="3Av-J7-Btt" kind="showDetail" id="eg6-6U-TRu"/>
+                                <segue destination="3Av-J7-Btt" kind="showDetail" identifier="SearchViewController" id="eg6-6U-TRu"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -424,7 +424,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="Ox1-Fv-hLe">
                             <connections>
-                                <segue destination="3Av-J7-Btt" kind="showDetail" id="btO-SZ-HQ7"/>
+                                <segue destination="3Av-J7-Btt" kind="showDetail" identifier="SearchViewController" id="btO-SZ-HQ7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
