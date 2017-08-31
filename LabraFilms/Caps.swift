@@ -19,10 +19,10 @@ class Caps {
         spinner.isHidden = false
         spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
         let width: CGFloat = 30
-        let heigth: CGFloat = 30
+        let height: CGFloat = 30
         let x: CGFloat = (view.frame.width / 2) - (width / 2)
-        let y: CGFloat = view.frame.height / 2
-        spinner.frame = CGRect(x: x, y: y, width: width, height: heigth)
+        let y: CGFloat = (view.frame.height / 2) - (height / 2)
+        spinner.frame = CGRect(x: x, y: y, width: width, height: height)
         spinner.startAnimating()
         view.addSubview(spinner)
     }

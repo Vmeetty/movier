@@ -20,22 +20,18 @@ class FilmTableViewCell: UITableViewCell {
     
     var film: Film? {
         didSet {
+            resetValues()
             configCell()
         }
     }
     var series: Series? {
         didSet {
+            resetValues()
             configCell()
         }
     }
-    
-    var imageURL: URL? {
-        didSet {
-            posterImageView?.image = nil
-            configCell()
-        }
-    }
-    
+    var imageURL: URL?
+
     private func configCell () {
         if let url = imageURL {
             spinner.startAnimating()
@@ -80,6 +76,15 @@ class FilmTableViewCell: UITableViewCell {
         self.posterConteinerView.layer.cornerRadius = 5
         self.posterConteinerView.clipsToBounds = true
         self.posterImageView.contentMode = .scaleAspectFill
+    }
+    
+    func resetValues () {
+        videoNameLabel.text = "..."
+        averageLabel.text = nil
+        descriptionLabel.text = "..."
+        localTitle.text = nil
+        posterImageView.image = nil
+        posterConteinerView.backgroundColor = UIColor.gray
     }
     
 }

@@ -21,11 +21,9 @@ class MovieDetailViewController: UIViewController {
         super.viewDidLoad()
         Caps.sharedInstance.configSpin(view: posterImageView)
         loadMovieInfo()
-        
     }
     
     func loadMovieInfo () {
-        
         VideoProvider.sharedInstance.getMovie(movieID: self.movieID, contentType: contentType) { (result) in
             if let movie = result as? Film {
                 self.titleLabel.text = movie.title
