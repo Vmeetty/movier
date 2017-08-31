@@ -19,10 +19,13 @@ class MovieDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Caps.sharedInstance.configSpin(view: posterImageView)
         loadMovieInfo()
+        
     }
     
     func loadMovieInfo () {
+        
         VideoProvider.sharedInstance.getMovie(movieID: self.movieID, contentType: contentType) { (result) in
             if let movie = result as? Film {
                 self.titleLabel.text = movie.title
@@ -32,12 +35,13 @@ class MovieDetailViewController: UIViewController {
                 self.titleLabel.text = series.title
                 self.descriptionLabel.text = series.overview
                 self.loadMoviePicture(movie: series)
-            }
+            } 
         }
     }
     
     func loadMoviePicture (movie: Any) {
         VideoProvider.sharedInstance.getPicture(video: movie) { (image) in
+            Caps.sharedInstance.removeSpin()
             self.posterImageView.image = image
             self.posterImageView.contentMode = .scaleAspectFill
         }

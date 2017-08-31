@@ -25,6 +25,7 @@ class BaseViewController: UIViewController {
             self.films.append(contentsOf: results)
             self.myTableView.reloadData()
             self.spinnerFlag = false
+            
         }
     }
     
@@ -58,6 +59,8 @@ extension BaseViewController: UITableViewDataSource {
         if indexPath.row == self.films.count {
             let moreCell = tableView.dequeueReusableCell(withIdentifier: CellIDs.moreCellID.rawValue) as! MoreTableViewCell
             moreCell.startSpinner = spinnerFlag
+            moreCell.objectsCount = films.count
+            moreCell.spinner.isHidden = true
             return moreCell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: CellIDs.filmCellID.rawValue, for: indexPath) as! FilmTableViewCell
@@ -91,6 +94,7 @@ extension BaseViewController: UITableViewDelegate {
                 seriesPage += 1
                 updateVideos(contentType: contentType, page: seriesPage, query: query)
             }
+            
             moreCell.startSpinner = true
         } else {
             let cell = tableView.cellForRow(at: indexPath)

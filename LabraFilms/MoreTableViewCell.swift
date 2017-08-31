@@ -13,24 +13,15 @@ class MoreTableViewCell: UITableViewCell {
     @IBOutlet weak var loadMoreLabel: UILabel!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
-    var startSpinner: Bool? {
+    var startSpinner: Bool! {
         didSet {
             configSpinner()
         }
     }
+    var objectsCount: Int? = nil
 
     func configSpinner () {
-        if let startSpinner = self.startSpinner {
-            if startSpinner {
-                loadMoreLabel.isHidden = true
-                spinner.isHidden = false
-                spinner.startAnimating()
-            } else {
-                spinner.isHidden = true
-                spinner.stopAnimating()
-                loadMoreLabel.isHidden = false
-            }
-        }  
+        Caps.sharedInstance.configSpinner(enable: startSpinner, spiner: spinner, label: loadMoreLabel, count: objectsCount)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -507,25 +507,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="205" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kaJ-jN-BDc">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="108" width="375" height="510"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search..." id="4c4-QJ-UYl">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="barTintColor" red="0.9763752818107605" green="0.97651904821395874" blue="0.97635573148727417" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
-                                    <scopeButtonTitles>
-                                        <string>Title</string>
-                                        <string>Title</string>
-                                    </scopeButtonTitles>
-                                    <connections>
-                                        <outlet property="delegate" destination="3Av-J7-Btt" id="wgc-Yh-Hdc"/>
-                                    </connections>
-                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FilmTableViewCell" rowHeight="205" id="mHs-29-q9M" customClass="FilmTableViewCell" customModule="LabraFilms" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="72" width="375" height="205"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="205"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mHs-29-q9M" id="7eD-OF-21C">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="205"/>
@@ -618,7 +604,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MoreTableViewCell" rowHeight="50" id="Oug-E5-qQE" customClass="MoreTableViewCell" customModule="LabraFilms" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="277" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="233" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Oug-E5-qQE" id="zrl-jT-8qn">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
@@ -653,14 +639,30 @@
                                     <outlet property="delegate" destination="3Av-J7-Btt" id="fPw-oR-FeK"/>
                                 </connections>
                             </tableView>
+                            <searchBar contentMode="redraw" placeholder="Search by title..." translatesAutoresizingMaskIntoConstraints="NO" id="4c4-QJ-UYl">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="barTintColor" red="0.9763752818107605" green="0.97651904821395874" blue="0.97635573148727417" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="3Av-J7-Btt" id="wgc-Yh-Hdc"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.18519949913024902" green="0.42673313617706299" blue="0.57796365022659302" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="M4E-DC-cX0" firstAttribute="top" secondItem="kaJ-jN-BDc" secondAttribute="bottom" id="8bj-H4-zmX"/>
+                            <constraint firstItem="kaJ-jN-BDc" firstAttribute="top" secondItem="4c4-QJ-UYl" secondAttribute="bottom" id="NX2-gT-kM9"/>
                             <constraint firstAttribute="trailing" secondItem="kaJ-jN-BDc" secondAttribute="trailing" id="R4x-6X-G0P"/>
-                            <constraint firstItem="kaJ-jN-BDc" firstAttribute="top" secondItem="MKd-5h-fZZ" secondAttribute="bottom" id="dc4-un-q2o"/>
+                            <constraint firstAttribute="trailing" secondItem="4c4-QJ-UYl" secondAttribute="trailing" id="dik-RT-RPD"/>
                             <constraint firstItem="kaJ-jN-BDc" firstAttribute="leading" secondItem="UFS-jC-OdI" secondAttribute="leading" id="hBV-b5-GIh"/>
+                            <constraint firstItem="4c4-QJ-UYl" firstAttribute="top" secondItem="MKd-5h-fZZ" secondAttribute="bottom" id="lN4-xU-2dT"/>
+                            <constraint firstItem="4c4-QJ-UYl" firstAttribute="leading" secondItem="UFS-jC-OdI" secondAttribute="leading" id="rJn-43-5S1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="nHn-JV-QBU">
@@ -678,7 +680,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LQk-SF-RoP" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4257" y="-319"/>
+            <point key="canvasLocation" x="4256.8000000000002" y="-319.79010494752629"/>
         </scene>
     </scenes>
     <resources>
