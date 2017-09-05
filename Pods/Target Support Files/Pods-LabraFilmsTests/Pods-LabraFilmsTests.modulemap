@@ -1,0 +1,6 @@
+framework module Pods_LabraFilmsTests {
+  umbrella header "Pods-LabraFilmsTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

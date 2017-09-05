@@ -1,0 +1,6 @@
+framework module Pods_LabraFilms {
+  umbrella header "Pods-LabraFilms-umbrella.h"
+
+  export *
+  module * { export * }
+}
