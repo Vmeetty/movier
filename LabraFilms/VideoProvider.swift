@@ -14,7 +14,7 @@ class VideoProvider {
     static let sharedInstance = VideoProvider()
     private init(){}
     var counter = 1
-    var params: [String:Any] = ["api_key":Networking.apiKey.rawValue]
+    var params: [String:Any] = ["api_key":Networking.apiKey.rawValue] // тут укзание типа для переменной необходимо, т.к. словарь создается [String:String], а мен нужен [String:Any]
     
     func getMovie(movieID: Int, contentType: ContentType, complitionHandler: @escaping (Any)->()) {
         var url = ""
@@ -36,7 +36,7 @@ class VideoProvider {
         }
     }
     
-    func loadVideos(contentType: ContentType, page: Int, filter: String? = nil, query: String? = nil, complitionHandler: @escaping ([Any])->()) {
+    func loadVideos(contentType: ContentType, page: Int, filter: String?, query: String? = nil, complitionHandler: @escaping ([Any])->()) {
         var finalURL = ""
         params["page"] = page
         params["include_adult"] = false

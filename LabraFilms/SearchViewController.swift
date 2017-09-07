@@ -15,7 +15,6 @@ class SearchViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        spinnerFlag = false
     }
     
     func setType (type: ContentType) {

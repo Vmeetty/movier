@@ -33,7 +33,7 @@ class MovieDetailViewController: UIViewController {
                 self.titleLabel.text = series.title
                 self.descriptionLabel.text = series.overview
                 self.loadMoviePicture(movie: series)
-            } 
+            }
         }
     }
     

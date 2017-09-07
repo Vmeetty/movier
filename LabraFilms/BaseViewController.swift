@@ -18,12 +18,26 @@ class BaseViewController: UIViewController {
     var spinnerFlag = true
     var moviePage = 1
     var seriesPage = 1
-    var query: String? = nil
+    var query: String?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let customNibName = UINib(nibName: CellIDs.customCellID.rawValue, bundle: nil)
+        myTableView.register(customNibName, forCellReuseIdentifier: CellIDs.customCellID.rawValue)
+        let customMoreNibName = UINib(nibName: CellIDs.moreCustomCellID.rawValue, bundle: nil)
+        myTableView.register(customMoreNibName, forCellReuseIdentifier: CellIDs.moreCustomCellID.rawValue)
+        myTableView.rowHeight = UITableViewAutomaticDimension
+        myTableView.estimatedRowHeight = 205
+
+    }
     
     func updateVideos (contentType: ContentType, page: Int, query: String? = nil) {
         VideoProvider.sharedInstance.loadVideos(contentType: contentType, page: page, filter: self.filterFlag, query: query) { (results) in
             self.films.append(contentsOf: results)
             self.myTableView.reloadData()
+            if self.films.count > 0 {
+                self.configFooter()
+            }
             self.spinnerFlag = false
             
         }
@@ -47,63 +61,56 @@ class BaseViewController: UIViewController {
         ActionSheet.sharedInstance.configActionSheet(sender: self)
     }
 
+    func configFooter () {
+        let footerView = UIView.init(frame: CGRect(x: 0, y: 0, width: myTableView.frame.width, height: 100))
+        let loadMoreButton = UIButton(type: .custom)
+        loadMoreButton.setTitle("Load more", for: .normal)
+        loadMoreButton.addTarget(self, action: #selector(loadMoreAction(button:)), for: .touchUpInside)
+        loadMoreButton.setTitleColor(UIColor.gray, for: .normal)
+        loadMoreButton.backgroundColor = UIColor.white
+        loadMoreButton.frame = CGRect(x: 0, y: 0, width: myTableView.frame.width, height: 100)
+        footerView.addSubview(loadMoreButton)
+        myTableView.tableFooterView = footerView
+    }
+    
+    func loadMoreAction (button: UIButton) {
+        Caps.sharedInstance.configSpin(view: button)
+        if contentType == .Movies {
+            moviePage += 1
+            updateVideos(contentType: contentType, page: moviePage, query: query)
+        } else {
+            seriesPage += 1
+            updateVideos(contentType: contentType, page: seriesPage, query: query)
+        }
+    }
 
 }
 
 extension BaseViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return films.count + 1
+        return films.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == self.films.count {
-            let moreCell = tableView.dequeueReusableCell(withIdentifier: CellIDs.moreCellID.rawValue) as! MoreTableViewCell
-            moreCell.startSpinner = spinnerFlag
-            moreCell.objectsCount = films.count
-            moreCell.spinner.isHidden = true
-            return moreCell
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: CellIDs.filmCellID.rawValue, for: indexPath) as! FilmTableViewCell
-            if let movie = films[indexPath.row] as? Film {
-                if let posterPath = movie.posterPath {
-                    let urlStr = Networking.baseURLposter.rawValue + Networking.posterSize.rawValue + posterPath
-                    cell.imageURL = URL(string: urlStr)
-                    cell.film = movie
-                }
-            } else if let series = films[indexPath.row] as? Series {
-                if let posterPath = series.posterPath {
-                    let urlStr = Networking.baseURLposter.rawValue + Networking.posterSize.rawValue + posterPath
-                    cell.imageURL = URL(string: urlStr)
-                    cell.series = series
-                }
-            }
-            return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellIDs.customCellID.rawValue, for: indexPath) as! CustomTableViewCell
+        if let movie = films[indexPath.row] as? Film {
+            cell.film = movie
+        } else if let series = films[indexPath.row] as? Series {
+            cell.series = series
         }
+        return cell
     }
 }
 
 extension BaseViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == self.films.count {
-            let moreCell = tableView.cellForRow(at: indexPath) as! MoreTableViewCell
-            if contentType == .Movies {
-                moviePage += 1
-                updateVideos(contentType: contentType, page: moviePage, query: query)
-            } else {
-                seriesPage += 1
-                updateVideos(contentType: contentType, page: seriesPage, query: query)
-            }
-            
-            moreCell.startSpinner = true
-        } else {
-            let cell = tableView.cellForRow(at: indexPath)
-            if let movie = films[indexPath.row] as? Film {
-                movieID = movie.id
-            } else if let series = films[indexPath.row] as? Series {
-                movieID = series.id
-            }
-            performSegue(withIdentifier: SegueIDs.movieDetailSegueID.rawValue, sender: cell)
+        let cell = tableView.cellForRow(at: indexPath)
+        if let movie = films[indexPath.row] as? Film {
+            movieID = movie.id
+        } else if let series = films[indexPath.row] as? Series {
+            movieID = series.id
         }
+        performSegue(withIdentifier: SegueIDs.movieDetailSegueID.rawValue, sender: cell)
     }
 }

@@ -11,31 +11,38 @@ import UIKit
 import SwiftyJSON
 
 class Film {
-    let title: String!
-    let posterPath: String!
-    let backdropPath: String!
-    let average: Double!
-    let overview: String!
-    let id: Int!
-    let releaseDate: String!
+    var title: String!
+    var posterPath: String!
+    var backdropPath: String!
+    var average: Double!
+    var overview: String!
+    var id: Int!
+    var releaseDate: String!
     
     init?(json: JSON) {
-        guard let title = json["original_title"].string,
-            let average = json["vote_average"].double,
-            let backdropPath = json["backdrop_path"].string,
-            let posterPath = json["poster_path"].string,
-            let releaseDate = json["release_date"].string,
-            let overview = json["overview"].string,
-            let id = json["id"].int else {
-                return nil
+        
+        if let title = json["original_title"].string {
+            self.title = title
         }
-        self.title = title
-        self.average = average
-        self.posterPath = posterPath
-        self.backdropPath = backdropPath
-        self.overview = overview
-        self.releaseDate = releaseDate
-        self.id = id
+        if let average = json["vote_average"].double {
+            self.average = average
+        }
+        if let backdropPath = json["backdrop_path"].string {
+            self.backdropPath = backdropPath
+        }
+        if let posterPath = json["poster_path"].string {
+            self.posterPath = posterPath
+        }
+        if let releaseDate = json["release_date"].string {
+            self.releaseDate = releaseDate
+        }
+        if let overview = json["overview"].string {
+            self.overview = overview
+        }
+        if let id = json["id"].int {
+            self.id = id
+        }
+        
     }
     
     static func parseJSON (json: JSON) -> [Film] {

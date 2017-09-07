@@ -21,6 +21,8 @@ enum CellIDs: String {
     case filmCellID = "FilmTableViewCell"
     case seriesCellID = "SeriesTableViewCell"
     case moreCellID = "MoreTableViewCell"
+    case customCellID = "CustomTableViewCell"
+    case moreCustomCellID = "MoreCustomTableViewCell"
 }
 
 // segue identifires
