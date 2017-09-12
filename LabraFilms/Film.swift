@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import UIKit
 import SwiftyJSON
 
 class Film {
@@ -21,7 +20,7 @@ class Film {
     
     init?(json: JSON) {
         
-        if let title = json["original_title"].string {
+        if let title = json["title"].string {
             self.title = title
         }
         if let average = json["vote_average"].double {
@@ -37,12 +36,15 @@ class Film {
             self.releaseDate = releaseDate
         }
         if let overview = json["overview"].string {
-            self.overview = overview
+            if overview.characters.count == 0 {
+               self.overview = "Описание отсутствует..."
+            } else {
+                self.overview = overview
+            }
         }
         if let id = json["id"].int {
             self.id = id
-        }
-        
+        }   
     }
     
     static func parseJSON (json: JSON) -> [Film] {

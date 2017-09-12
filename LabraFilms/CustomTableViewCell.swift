@@ -31,7 +31,7 @@ class CustomTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         videoNameLabel.text = "..."
         averageLabel.text = nil
-        descriptionLabel.text = "..."
+        descriptionLabel.text = ""
         posterImageView.image = nil
         posterConteinerView.backgroundColor = UIColor.gray
     }

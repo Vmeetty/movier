@@ -41,11 +41,20 @@ enum Networking: String {
     case latest = "latest"
     case baseURLposter = "https://image.tmdb.org/t/p/"
     case posterSize = "w370"
+    case language = "ru"
 }
 
 enum SearchingBaseURLs: String {
     case searchMovieBaseURL = "https://api.themoviedb.org/3/search/movie"
     case searchSeriesBaseURL = "https://api.themoviedb.org/3/search/tv"
+}
+
+// params keys
+enum Params: String {
+    case page = "page"
+    case query = "query"
+    case includeAdult = "includeAdult"
+    case language = "language"
 }
 
 // filter flags

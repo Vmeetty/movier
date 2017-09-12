@@ -14,7 +14,7 @@ class VideoProvider {
     static let sharedInstance = VideoProvider()
     private init(){}
     var counter = 1
-    var params: [String:Any] = ["api_key":Networking.apiKey.rawValue] // тут укзание типа для переменной необходимо, т.к. словарь создается [String:String], а мен нужен [String:Any]
+    var params: [String:Any] = ["api_key":Networking.apiKey.rawValue]
     
     func getMovie(movieID: Int, contentType: ContentType, complitionHandler: @escaping (Any)->()) {
         var url = ""
@@ -23,9 +23,10 @@ class VideoProvider {
         } else {
             url = Networking.baseURLserries.rawValue
         }
-        params["page"] = nil
-        params["query"] = nil
-        params["include_adult"] = nil
+        params[Params.page.rawValue] = nil
+        params[Params.query.rawValue] = nil
+        params[Params.includeAdult.rawValue] = nil
+        params[Params.language.rawValue] = Networking.language.rawValue
         let finalURL = url + String(movieID)
         NetworkManager.sharedInstance.getMovie(url: finalURL, type: contentType, params: params, succes: { (movie) in
             kMainQueue.async {
@@ -38,10 +39,11 @@ class VideoProvider {
     
     func loadVideos(contentType: ContentType, page: Int, filter: String?, query: String? = nil, complitionHandler: @escaping ([Any])->()) {
         var finalURL = ""
-        params["page"] = page
-        params["include_adult"] = false
+        params[Params.page.rawValue] = page
+        params[Params.includeAdult.rawValue] = false
+        params[Params.language.rawValue] = Networking.language.rawValue
         if let query = query {
-            params["query"] = query
+            params[Params.query.rawValue] = query
             if contentType == .Movies {
                 finalURL = SearchingBaseURLs.searchMovieBaseURL.rawValue
             } else {
@@ -65,10 +67,10 @@ class VideoProvider {
     
     func getPicture (video: Any, complitionHandler: @escaping (UIImage) -> ()) {
         var backdropPath = ""
-        if let movie = video as? Film {
-            backdropPath = movie.backdropPath
-        } else if let series = video as? Series {
-            backdropPath = series.backdropPath
+        if let movie = video as? FilmDetail {
+            backdropPath = movie.picturePath
+        } else if let series = video as? SeriesDetail {
+            backdropPath = series.picturePath
         }
         if let url = URL(string: Networking.baseURLposter.rawValue + Networking.posterSize.rawValue + backdropPath) {
             NetworkManager.sharedInstance.getPosterImage(url: url, succes: { (image) in

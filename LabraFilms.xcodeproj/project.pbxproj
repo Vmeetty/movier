@@ -22,6 +22,7 @@
 		F54E22291F52E070000DB442 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54E22281F52E070000DB442 /* BaseViewController.swift */; };
 		F57446F91F5EBE020083EEA1 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57446F71F5EBE020083EEA1 /* CustomTableViewCell.swift */; };
 		F57446FA1F5EBE020083EEA1 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F57446F81F5EBE020083EEA1 /* CustomTableViewCell.xib */; };
+		F5E7D7721F66748A008152DA /* SeriesDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E7D7711F66748A008152DA /* SeriesDetail.swift */; };
 		F5EBDB3B1F517D0500AA5B0D /* ActionSheets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EBDB3A1F517D0500AA5B0D /* ActionSheets.swift */; };
 		F5EBDB3D1F51811000AA5B0D /* VideoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EBDB3C1F51811000AA5B0D /* VideoProvider.swift */; };
 		F5EF3CF11F57E70C006991A3 /* Caps.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EF3CF01F57E70C006991A3 /* Caps.swift */; };
@@ -74,6 +75,7 @@
 		F54E22281F52E070000DB442 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F57446F71F5EBE020083EEA1 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		F57446F81F5EBE020083EEA1 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
+		F5E7D7711F66748A008152DA /* SeriesDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeriesDetail.swift; sourceTree = "<group>"; };
 		F5EBDB3A1F517D0500AA5B0D /* ActionSheets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheets.swift; sourceTree = "<group>"; };
 		F5EBDB3C1F51811000AA5B0D /* VideoProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoProvider.swift; sourceTree = "<group>"; };
 		F5EF3CF01F57E70C006991A3 /* Caps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Caps.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				F50943391F4C558900E42A7C /* Film.swift */,
 				F5F1E1AA1F53F1C0005F40AA /* Series.swift */,
 				F5F5E87D1F4D8A620020B33C /* FilmDetail.swift */,
+				F5E7D7711F66748A008152DA /* SeriesDetail.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 				F57446F91F5EBE020083EEA1 /* CustomTableViewCell.swift in Sources */,
 				F5F5E87C1F4D805F0020B33C /* MovieDetailViewController.swift in Sources */,
 				F5F1E1AB1F53F1C0005F40AA /* Series.swift in Sources */,
+				F5E7D7721F66748A008152DA /* SeriesDetail.swift in Sources */,
 				F5EBDB3B1F517D0500AA5B0D /* ActionSheets.swift in Sources */,
 				F50943031F4C4DBC00E42A7C /* AppDelegate.swift in Sources */,
 				F50943051F4C4DBC00E42A7C /* MovieViewController.swift in Sources */,
@@ -678,13 +682,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = NYBC469U45;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = LabraFilms/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = vladchuvashov.LabraFilms;
+				PRODUCT_BUNDLE_IDENTIFIER = vladchuvashov.movier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -696,13 +701,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = NYBC469U45;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = LabraFilms/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = vladchuvashov.LabraFilms;
+				PRODUCT_BUNDLE_IDENTIFIER = vladchuvashov.movier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

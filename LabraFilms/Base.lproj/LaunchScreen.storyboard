@@ -22,25 +22,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movier" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cnU-3d-Zmd">
-                                <rect key="frame" x="93" y="329" width="188.5" height="76.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="101" y="301.5" width="173" height="64.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="54"/>
+                                <color key="textColor" red="0.14507955312728882" green="0.1451074481010437" blue="0.14507573843002319" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="film" translatesAutoresizingMaskIntoConstraints="NO" id="2ZY-ze-dtt">
-                                <rect key="frame" x="108" y="178" width="159" height="150"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movier_b" translatesAutoresizingMaskIntoConstraints="NO" id="9zI-A6-agI">
+                                <rect key="frame" x="149" y="225" width="77" height="77"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="159" id="GGI-0Y-LDq"/>
-                                    <constraint firstAttribute="height" constant="150" id="nhI-Fn-YAr"/>
+                                    <constraint firstAttribute="width" constant="77" id="1Ve-mQ-qfW"/>
+                                    <constraint firstAttribute="height" constant="77" id="6Qt-dA-qEd"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.25884214043617249" green="0.28928712010383606" blue="0.37526446580886841" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.99019607843137258" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="cnU-3d-Zmd" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="6Wc-mP-wdz"/>
-                            <constraint firstItem="2ZY-ze-dtt" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="MsI-8I-Lqo"/>
-                            <constraint firstItem="2ZY-ze-dtt" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-80.5" id="dn4-Sf-726"/>
-                            <constraint firstItem="cnU-3d-Zmd" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="33.75" id="dzG-RF-AwZ"/>
+                            <constraint firstItem="cnU-3d-Zmd" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="81k-HP-dWR"/>
+                            <constraint firstItem="cnU-3d-Zmd" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="RsF-1k-Z1C"/>
+                            <constraint firstItem="9zI-A6-agI" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Sfy-qv-Rt3"/>
+                            <constraint firstItem="9zI-A6-agI" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-70" id="o1n-pj-0op"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -50,6 +50,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="film" width="256" height="256"/>
+        <image name="movier_b" width="512" height="512"/>
     </resources>
 </document>

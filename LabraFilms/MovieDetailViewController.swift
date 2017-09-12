@@ -25,11 +25,11 @@ class MovieDetailViewController: UIViewController {
     
     func loadMovieInfo () {
         VideoProvider.sharedInstance.getMovie(movieID: self.movieID, contentType: contentType) { (result) in
-            if let movie = result as? Film {
+            if let movie = result as? FilmDetail {
                 self.titleLabel.text = movie.title
                 self.descriptionLabel.text = movie.overview
                 self.loadMoviePicture(movie: movie)
-            } else if let series = result as? Series {
+            } else if let series = result as? SeriesDetail {
                 self.titleLabel.text = series.title
                 self.descriptionLabel.text = series.overview
                 self.loadMoviePicture(movie: series)

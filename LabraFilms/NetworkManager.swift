@@ -16,7 +16,6 @@ class NetworkManager {
     private init(){}
     
     func getMovie(url: String, type: ContentType, params: [String:Any], succes: @escaping (Any)->(), fail: @escaping (String)->()) {
-       
         kUserInitiatedGQ.async {
             Alamofire.request(url, method: .get, parameters: params).responseJSON { (response) in
                 if let error = response.error {
@@ -24,11 +23,11 @@ class NetworkManager {
                 } else {
                     if let value = response.value {
                         if type == .Movies {
-                            if let filmInstance = Film(json: JSON(value)) {
+                            if let filmInstance = FilmDetail(json: JSON(value)) {
                                 succes(filmInstance)
                             }
                         } else {
-                            if let seriesInstance = Series(json: JSON(value)) {
+                            if let seriesInstance = SeriesDetail(json: JSON(value)) {
                                 succes(seriesInstance)
                             }
                         }
@@ -57,12 +56,14 @@ class NetworkManager {
     }
     
     func getPosterImage (url _url: URL, succes: @escaping (UIImage)->(), fail: @escaping (String)->()) {
-        Alamofire.request(_url).response(queue: kUserInitiatedGQ) { (response) in
-            if let error = response.error {
-                fail(error.localizedDescription)
-            } else {
-                if let data = response.data, let image = UIImage(data: data) {
-                    succes(image)
+        kUserInitiatedGQ.async {
+            Alamofire.request(_url).response(queue: kUserInitiatedGQ) { (response) in
+                if let error = response.error {
+                    fail(error.localizedDescription)
+                } else {
+                    if let data = response.data, let image = UIImage(data: data) {
+                        succes(image)
+                    }
                 }
             }
         }

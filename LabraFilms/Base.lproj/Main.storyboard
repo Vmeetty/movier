@@ -106,7 +106,7 @@
             </objects>
             <point key="canvasLocation" x="54" y="-1536"/>
         </scene>
-        <!--Movie View Controller-->
+        <!--Movies-->
         <scene sceneID="Cyx-m6-n5S">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="7bd-Pi-pjn" customClass="MovieViewController" customModule="LabraFilms" customModuleProvider="target" sceneMemberID="viewController">
@@ -135,7 +135,7 @@
                             <constraint firstItem="kie-Go-tu7" firstAttribute="top" secondItem="0c0-Va-7Au" secondAttribute="bottom" id="wB4-Cv-qVb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="4sa-7V-l3R">
+                    <navigationItem key="navigationItem" title="Movies" id="4sa-7V-l3R">
                         <barButtonItem key="leftBarButtonItem" title="Filter" id="fYh-mG-teI">
                             <connections>
                                 <action selector="filtrAction:" destination="7bd-Pi-pjn" id="mcB-y0-wfv"/>
@@ -175,7 +175,7 @@
             </objects>
             <point key="canvasLocation" x="54" y="707"/>
         </scene>
-        <!--Series View Controller-->
+        <!--TV Series-->
         <scene sceneID="6xu-mx-3Il">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="KXe-8N-EQe" customClass="SeriesViewController" customModule="LabraFilms" customModuleProvider="target" sceneMemberID="viewController">
@@ -204,7 +204,7 @@
                             <constraint firstAttribute="trailing" secondItem="okU-f9-Hnd" secondAttribute="trailing" id="rFE-pH-qHl"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="qeT-O0-jya">
+                    <navigationItem key="navigationItem" title="TV Series" id="qeT-O0-jya">
                         <barButtonItem key="leftBarButtonItem" title="Filter" id="Bsd-tA-wHv">
                             <connections>
                                 <action selector="filtrAction:" destination="KXe-8N-EQe" id="cal-r5-DaQ"/>
@@ -313,7 +313,7 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kJu-9B-a6E"/>
         <segue reference="T6S-PD-GkP"/>
+        <segue reference="kJu-9B-a6E"/>
     </inferredMetricsTieBreakers>
 </document>

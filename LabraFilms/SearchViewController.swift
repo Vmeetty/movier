@@ -17,7 +17,7 @@ class SearchViewController: BaseViewController {
         super.viewDidLoad()
     }
     
-    func setType (type: ContentType) {
+    func setType (_ type: ContentType) {
         self.type = type
     }
     
@@ -33,6 +33,7 @@ extension SearchViewController: UISearchBarDelegate {
         let keywords = searchBar.text
         query = keywords!
         if let type = type {
+            self.contentType = type
             updateVideos(contentType: type, page: 1, query: query)
         }
         searchBar.endEditing(true) 

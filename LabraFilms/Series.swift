@@ -19,7 +19,7 @@ class Series {
     
     init?(json: JSON) {
         
-        if let title = json["original_name"].string {
+        if let title = json["name"].string {
             self.title = title
         }
         if let average = json["vote_average"].double {

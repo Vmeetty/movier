@@ -26,9 +26,7 @@ class BaseViewController: UIViewController {
         myTableView.register(customNibName, forCellReuseIdentifier: CellIDs.customCellID.rawValue)
         let customMoreNibName = UINib(nibName: CellIDs.moreCustomCellID.rawValue, bundle: nil)
         myTableView.register(customMoreNibName, forCellReuseIdentifier: CellIDs.moreCustomCellID.rawValue)
-        myTableView.rowHeight = UITableViewAutomaticDimension
         myTableView.estimatedRowHeight = 205
-
     }
     
     func updateVideos (contentType: ContentType, page: Int, query: String? = nil) {
@@ -39,7 +37,6 @@ class BaseViewController: UIViewController {
                 self.configFooter()
             }
             self.spinnerFlag = false
-            
         }
     }
     
@@ -52,7 +49,7 @@ class BaseViewController: UIViewController {
         }
         else if segue.identifier == SegueIDs.searchSegueID.rawValue {
             if let searchVC = segue.destination as? SearchViewController {
-                searchVC.setType(type: self.contentType)
+                searchVC.setType(self.contentType)
             }
         }
     }
@@ -91,6 +88,7 @@ extension BaseViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return films.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CellIDs.customCellID.rawValue, for: indexPath) as! CustomTableViewCell
         if let movie = films[indexPath.row] as? Film {

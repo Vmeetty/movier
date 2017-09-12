@@ -1,22 +1,22 @@
 //
-//  FilmDetail.swift
+//  SeriesDetail.swift
 //  LabraFilms
 //
-//  Created by vlad on 8/23/17.
+//  Created by vlad on 9/11/17.
 //  Copyright © 2017 vlad. All rights reserved.
 //
 
 import Foundation
 import SwiftyJSON
 
-class FilmDetail {
+class SeriesDetail {
     var title = ""
     var picturePath = ""
-    var overview: String?
+    var overview = ""
     
     init?(json: JSON) {
-        if let title = json["title"].string {
-            self.title = title
+        if let title = json["name"].string {
+          self.title = title
         }
         if let posterPath = json["backdrop_path"].string {
             self.picturePath = posterPath
@@ -27,4 +27,5 @@ class FilmDetail {
             self.overview = "Описание отсутствует..."
         }
     }
+    
 }
